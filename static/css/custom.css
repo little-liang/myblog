@@ -1,4 +1,31 @@
-header {
-    background: #FFF;
+body {
+    background-color: #c7c7c7;
 }
 
+header nav a img {
+    height: 100px;
+    padding-bottom: 15px;
+}
+
+.nav{
+    padding-top: 35px;
+}
+
+.navbar{
+    min-height: 110px;
+}
+
+.navbar-nav {
+    float: left;
+    margin-top: 15px;
+    height: 85px;
+    padding-top: 15px;
+    background: black;
+}
+.navbar-brand {
+    margin-right: -15px;
+}
+
+a {
+    color: #d2d2d2;
+}

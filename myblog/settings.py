@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app1',
+    'Blog',
 ]
 
 MIDDLEWARE = [
@@ -75,13 +75,6 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 
 DATABASES = {
     'default': {
@@ -89,7 +82,7 @@ DATABASES = {
         'NAME': 'myblog', #数据库名字
         'USER': 'myblog',
         'PASSWORD': 'myblog',
-        'HOST': '192.243.118.115',
+        'HOST': 'localhost',
         'PORT': 3306
     }
 }
@@ -132,3 +125,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 静态访问目录
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    # os.path.join(BASE_DIR, '/var/www/hmtl'),
+)

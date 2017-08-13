@@ -1,31 +1,66 @@
-body {
-    background-color: #c7c7c7;
-}
+/*body {*/
+    /*background-color: #c7c7c7;*/
+/*}*/
 
-header nav a img {
-    height: 100px;
-    padding-bottom: 15px;
-}
-
-.nav{
-    padding-top: 35px;
-}
-
-.navbar{
+.navbar-for-index{
     min-height: 110px;
 }
 
-.navbar-nav {
-    float: left;
-    margin-top: 15px;
-    height: 85px;
-    padding-top: 15px;
-    background: black;
-}
-.navbar-brand {
+.navbar-brand-for-index {
     margin-right: -15px;
+    padding: 20px 15px;
 }
 
-a {
-    color: #d2d2d2;
+
+
+.header_content-for-index {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    float: left;
+    background: black;
+}
+.header_content_left_img {
+    float: left;
+}
+.header_content_left_img img {
+    height: 100px;
+    padding-left: 15px;
+}
+
+.header_content_right_img {
+    float: right;
+}
+.header_content_right_img img {
+    height: 100px;
+    padding-right: 15px;
+}
+
+.header-font {
+    font-size: 20px;
+}
+
+ .col-lg-9-for-admin {
+    float: left;
+    width: 80%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 35px;
+}
+.page-header-for-admin {
+  padding-bottom: 9px;
+  margin: 20px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.text-for-admin {
+    text-align: center;
+    font-size: large;
+    font-family: 新宋体;
+}
+.text-for-admin-2 {
+    text-align: center;
+    font-size: large;
+    font-family: 新宋体;
 }

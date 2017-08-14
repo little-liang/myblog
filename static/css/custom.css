@@ -64,3 +64,15 @@
     font-size: large;
     font-family: 新宋体;
 }
+
+.left-content-for-admin {
+    list-style-type: none;
+    margin-top: 0;
+    -webkit-padding-start: 10px;
+}
+.left-content-for-admin-2 {
+    list-style-type: none;
+    margin-top: 0;
+    -webkit-padding-start: 10px;
+    display: none;
+}

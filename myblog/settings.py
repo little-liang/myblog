@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,17 +74,37 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', #数据库类型
-        'NAME': 'myblog', #数据库名字
-        'USER': 'myblog',
-        'PASSWORD': 'myblog',
-        'HOST': 'localhost',
-        'PORT': 3306
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+###home
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', #数据库类型
+#         'NAME': 'myblog', #数据库名字
+#         'USER': 'myblog',
+#         'PASSWORD': 'myblog',
+#         'HOST': 'localhost',
+#         'PORT': 3306
+#     }
+# }
+
+
+###office
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', #数据库类型
+#         'NAME': 'myblog', #数据库名字
+#         'USER': 'myblog',
+#         'PASSWORD': 'myblog',
+#         'HOST': '172.18.126.51',
+#         'PORT': 3306
+#     }
+# }
 
 
 # Password validation

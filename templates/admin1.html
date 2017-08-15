@@ -21,7 +21,7 @@
     <div class="list-group text-for-admin">
         <ul class="left-content-for-admin" id="drop1">
             <li>
-                <a href="#" class="list-group-item active" id="dropdown1">文章管理</a>
+                <a href="#" class="list-group-item active" id="dropdown1">文章管理<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 
                 <ul class="left-content-for-admin" >
                     <li><a href="#" class="list-group-item">文章管理</a></li>
@@ -61,13 +61,34 @@
 {#  </div>#}
 
   <!-- Table -->
+<table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>标题</th>
+            <th>分类</th>
+            <th>发布时间</th>
+            <th>作者</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for article in article_list %}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ article.title }}</td>
+            <td>{{ article.catagory }}</td>
+            <td>{{ article.publish_time }}</td>
+            <td>{{ article.author }} <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
 
 
 
-    {% for article in article_list %}
-        <h4>{{ article.title }}</h4>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
 
-    {% endfor %}
+
 
 
 </div>

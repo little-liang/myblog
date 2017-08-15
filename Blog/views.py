@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from Blog.models import *
+from Blog.models import Article
 import markdown
 def index(request):
 
@@ -9,6 +9,7 @@ def index(request):
 
 def admin1(request):
 
+
     article_list = Article.objects.all()
-    print(article_list)
+
     return render(request, 'admin1.html', context={'article_list': article_list})

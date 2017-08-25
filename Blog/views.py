@@ -13,3 +13,9 @@ def admin1(request):
     article_list = Article.objects.all()
 
     return render(request, 'admin1.html', context={'article_list': article_list})
+
+
+def admin2(request):
+    article_list = Article.objects.all()
+
+    return render(request, 'admin2.html', context={'article_list': article_list})

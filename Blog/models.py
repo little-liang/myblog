@@ -16,6 +16,7 @@ class Tag(models.Model):
         return self.name
 
 class Article(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=64)
     publish_time = models.DateField(auto_now_add=True)
     tags = models.ManyToManyField(Tag)
@@ -29,6 +30,7 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
+    id = models.AutoField(primary_key=True)
     article = models.ForeignKey(Article)
     author = models.CharField(max_length=8)
     publish_time = models.DateField(auto_now_add=True)

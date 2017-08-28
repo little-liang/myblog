@@ -20,5 +20,7 @@ from Blog.views import *
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^$', index),
-    url(r'^admin1/$', article_admin),
+    url(r'^article_admin/$', article_admin, name='article_admin'),
+    url(r'^edit_article/$', edit_article, name='edit_article'),
+    url(r'^submit_article_id/$', submit_article_id, name='submit_article_id'),
 ]

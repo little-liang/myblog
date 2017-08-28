@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+    <script src="/static/js/tinymce/tinymce.min.js"></script>
+    <script src="/static/js/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+
+<!--大标题-->
+<div class="page-header-for-admin">
+  <h1 class="text-center">博客后台管理系统</h1>
+</div>
+
+<!--左侧栏-->
+<div class="col-lg-2">
+    <div class="list-group text-for-admin">
+        <ul class="left-content-for-admin" id="drop1">
+            <li>
+                <a href="#" class="list-group-item active" id="dropdown1">文章管理<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+                <ul class="left-content-for-admin" >
+                    <li><a href="#" class="list-group-item">文章管理</a></li>
+                    <li><a href="#" class="list-group-item">文章管理</a></li>
+                    <li><a href="#" class="list-group-item">文章管理</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--编辑文章-->
+<div class="col-lg-9-for-admin">
+    <span>标题 : </span><input style="width: 70%;" type="text" name="fname" />
+    <br/>
+    <br/>
+    <span>分类 : </span>
+    <select>
+      <option value ="volvo">第1种</option>
+      <option value ="saab">第2种</option>
+      <option value="opel">第3种</option>
+      <option value="audi">第4种</option>
+    </select>
+    <br/>
+    <br/>
+    <textarea id="elm1"></textarea>
+    <br/>
+
+    <input type="radio" value="" checked="checked" />允许评论
+    <input type="radio" value="" />不许评论
+
+
+    <br/>
+    <br/>
+        <button type="button">保存</button>
+        <button type="button">退出</button>
+    </div>
+
+</body>
+<script src="/static/js/edit_article.js"></script>
+</html>

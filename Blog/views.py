@@ -7,15 +7,15 @@ def index(request):
 
     return render(request, 'index.html')
 
-def admin1(request):
+def article_admin(request):
 
 
     article_list = Article.objects.all()
 
-    return render(request, 'admin1.html', context={'article_list': article_list})
+    return render(request, 'article_admin.html', context={'article_list': article_list})
 
 
-def admin2(request):
+def edit_article(request):
     article_list = Article.objects.all()
 
-    return render(request, 'admin2.html', context={'article_list': article_list})
+    return render(request, 'edit_article.html', context={'article_list': article_list})

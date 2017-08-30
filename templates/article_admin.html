@@ -62,7 +62,7 @@
 
             <tbody>
                 {% for article in article_list %}
-                  <tr>
+                  <tr row-id="{{ article.id }}">
                     <td scope="row"><label>
                       <input type="checkbox">
                     </label></td>
@@ -72,8 +72,8 @@
                     <td>{{ article.publish_time }}</td>
                     <td>{{ article.author }}</td>
                     <td>
-                        <a>
-                            <span onclick="test1(this)" class="glyphicon glyphicon-pencil"></span> &nbsp;&nbsp;&nbsp;
+                        <a href="{% url "edit_article" %}?a-id={{ article.id }}">
+                            <span class="glyphicon glyphicon-pencil"></span> &nbsp;&nbsp;&nbsp;
                         </a>
                     </td>
                   </tr>
@@ -100,14 +100,19 @@
 </body>
 <script src="/static/js/custom.js"></script>
 <script>
-    function test1(ele) {
-        var aa;
-        aa = $(ele).parent().children("td:eq(2)").html();
-        console.log($(ele).parent().parent().parent().children("td:eq(2)").html());
-
-        $.post("{% url 'submit_article_id' %}",{ 'kk': 'fff' }, function(callback){
-            console.log(callback);
+    $(document).ready(function(){
+        $(document).on("click","[name='edit']",function(){
+            var rowId=$(this).closest('tr').attr("row-id");
+            $.ajax({
+             type: "POST",
+             url: "{% url 'submit_article_id' %}",
+             data: { 'article_info': rowId},
+             dataType: "json",
+             success: function(data){
+                 console.log('ok');
+                }
+             });
         });
-    }
+    });
 </script>
 </html>

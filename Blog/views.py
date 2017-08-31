@@ -11,13 +11,18 @@ def index(request):
 def article_admin(request):
     article_list = Article.objects.all()
     return render(request, 'article_admin.html', context={'article_list': article_list})
-    # return HttpResponseRedirect('/')
 
 
 def edit_article(request):
     print(request.GET)
-    article_list = Article.objects.all()
-    return render(request, 'edit_article.html', context={'article_list': article_list})
+    print(json.dumps(request.GET))
+    aa = request.GET.get('article-id')
+    print(aa)
+
+
+    article_id_info = Article.objects.filter(id=int(aa))
+    print(article_id_info[0].id)
+    return render(request, 'edit_article.html', context={'article_list': 'll'})
 
 @csrf_exempt
 def submit_article_id(request):

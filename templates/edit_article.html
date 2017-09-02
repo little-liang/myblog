@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/custom.css" rel="stylesheet">
-    <script src="/static/js/tinymce/tinymce.min.js"></script>
-    <script src="/static/js/jquery-3.2.1.js"></script>
+    <link href="/static/plugins/kindeditor/themes/default/default.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-<!--大标题-->
+{#<!--大标题-->#}
 <div class="page-header-for-admin">
-  <h1 class="text-center">博客后台管理系统</h1>
+{#  <h1 class="text-center">博客后台管理系统</h1>#}
 </div>
 
 <!--左侧栏-->
@@ -34,31 +34,99 @@
 
 <!--编辑文章-->
 <div class="col-lg-9-for-admin">
-    <span>标题 : </span><input id="article_id" style="width: 70%;" type="text" name="fname" value="Mickey"/>
-    <br/>
-    <br/>
-    <span>分类 : </span>
-    <select>
-      <option value ="volvo">第1种</option>
-      <option value ="saab">第2种</option>
-      <option value="opel">第3种</option>
-      <option value="audi">第4种</option>
-    </select>
-    <br/>
-    <br/>
-    <textarea id="elm1"></textarea>
-    <br/>
 
-    <input type="radio" value="" checked="checked" />允许评论
-    <input type="radio" value="" />不许评论
+    <form>
+        {% csrf_token %}
+        <span>标题 : </span><input id="article_id" style="width: 70%;" type="text" name="title"/>
+        <br/>
+        <br/>
+        <span>分类 : </span>
+        <select>
+          <option value ="volvo">第1种</option>
+          <option value ="saab">第2种</option>
+          <option value="opel">第3种</option>
+          <option value="audi">第4种</option>
+        </select>
+        <br/>
+        <br/>
+
+        <textarea id="editor_id" name="content" style="width:800px;height:400px;visibility:hidden;"></textarea>
+        <br/>
+
+        <input type="radio" value="" checked="checked" />允许评论
+        <input type="radio" value="" />不许评论
 
 
-    <br/>
-    <br/>
-        <button type="button">保存</button>
-        <button type="button">退出</button>
+        <br/>
+        <br/>
+            <button name="submit" type="button">保存</button>
+            <button type="button">退出</button>
+
+        </form>
     </div>
 
 </body>
-<script src="/static/js/custom.js"></script>
+{#<script src="/static/js/custom.js"></script>#}
+<script src="/static/js/jquery-3.2.1.js"></script>
+<script src="/static/plugins/kindeditor/kindeditor-all.js"></script>
+<script>
+
+
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="content"]', {
+            allowFileManager : true,
+            filterMode : false,
+            wellformatmode : false
+        });
+
+
+        editor.html('{{ article_info.content|safe }}');
+
+    });
+
+    $(document).ready(function () {
+        $("[name='title']").val('{{ article_info.title|safe }}');
+
+
+
+        $(document).on('click','[name="submit"]',function () {
+            var data = {};
+            data['id'] = {{ article_info.id }}
+            data['content_post'] = editor.html().replace(/(\n)/g, "");
+
+
+            console.log(editor.html().replace(/(\n)/g, ""));
+            data['title_post'] = $("[name='title']").val();
+
+              $.ajax({
+                  type: "POST",
+                  dataType: "json",
+                  url: {% url 'edit_article' %},
+                  data: data,
+                  success: callback,
+                  beforSend:function(){
+                        // 禁用按钮防止重复提交
+                        $("#submit").attr({ disabled: "disabled" });
+                    },
+                complete:function(msg){
+                    //请求完成后调用的回调函数（请求成功或失败时均调用）
+                } ,
+                error:function(msg){
+                    //请求失败时被调用的函数
+                } ,
+                Sucess:function(callback){
+                    alert('ok');
+                }
+              })
+
+
+        })
+
+    });
+
+
+
+</script>
+
 </html>

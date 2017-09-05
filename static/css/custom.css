@@ -103,17 +103,17 @@ table td:nth-child(4),th:nth-child(4){
 table td:nth-child(5),th:nth-child(5){
     border-right: 1px solid #ddd;
     text-align: center;
-    width: 13%;
+    width: 10%;
 }
 
 table td:nth-child(6),th:nth-child(6){
     border-right: 1px solid #ddd;
     text-align: center;
-    width: 10%;
+    width: 8%;
 }
 
 table td:nth-child(7),th:nth-child(7){
     /*border-right: 1px solid #ddd;*/
     text-align: center;
-    width: 5%;
+    width: 10%;
 }

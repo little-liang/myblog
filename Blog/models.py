@@ -25,6 +25,7 @@ class Article(models.Model):
     author = models.CharField(max_length=8)
     canbe_content = models.BooleanField(default=True)
 
+
     def __str__(self):
         return self.title
 

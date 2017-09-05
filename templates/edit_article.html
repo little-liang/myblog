@@ -86,25 +86,30 @@
     });
 
     $(document).ready(function () {
-        $("[name='title']").val('{{ article_info.title|safe }}');
+        //如果有后台发过来的文章详情,没有就是新加文章
 
+        if ('{{ article_info }}' != ''){
+            $("[name='title']").val('{{ article_info.title|safe }}');
+        }
 
 
         $(document).on('click','[name="submit"]',function () {
             var data = {};
-            data['id'] = {{ article_info.id }}
+            if ('{{ article_info }}' != ''){
+                data['id'] = '{{ article_info.id }}';
+            }
             data['content_post'] = editor.html().replace(/(\n)/g, "");
-
-
-            console.log(editor.html().replace(/(\n)/g, ""));
             data['title_post'] = $("[name='title']").val();
 
+            console.log(data);
               $.ajax({
                   type: "POST",
                   dataType: "json",
                   url: {% url 'edit_article' %},
                   data: data,
-                  success: callback,
+                  success:function(data){
+                        console.log('ok');
+                    },
                   beforSend:function(){
                         // 禁用按钮防止重复提交
                         $("#submit").attr({ disabled: "disabled" });
@@ -118,10 +123,10 @@
                 Sucess:function(callback){
                     alert('ok');
                 }
-              })
+              });
 
 
-        })
+        });
 
     });
 

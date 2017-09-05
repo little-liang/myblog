@@ -72,8 +72,12 @@
                     <td>{{ article.publish_time }}</td>
                     <td>{{ article.author }}</td>
                     <td>
-                        <a href="{% url "edit_article" %}?article-id={{ article.id }}">
-                            <span class="glyphicon glyphicon-pencil"></span> &nbsp;&nbsp;&nbsp;
+                        <a href="{% url "edit_article" %}?article-id={{ article.id }}&command=delete">
+                            <span class="glyphicon glyphicon-pencil">删除</span>
+                        </a>
+                        &nbsp;&nbsp;
+                        <a href="{% url "edit_article" %}?article-id={{ article.id }}&command=null">
+                            <span class="glyphicon glyphicon-pencil">编辑</span>
                         </a>
                     </td>
                   </tr>

@@ -17,6 +17,8 @@ def article_admin(request):
     page = request.GET.get('page')
 
     #当前页第一个文章的编号
+    if page == None:
+        page = 1
     current_page_first = (int(page) - 1) * every_page_num
 
     try:

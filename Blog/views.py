@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 import json
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 from Blog.models import *
@@ -9,8 +10,30 @@ def index(request):
     return render(request, 'index.html')
 
 def article_admin(request):
-    article_list = Article.objects.all()
-    return render(request, 'article_admin.html', context={'article_list': article_list})
+    every_page_num = 5  # 每页显示的记录数
+    p = Paginator(Article.objects.all(), every_page_num)
+
+    ##前端点击的page,第几页
+    page = request.GET.get('page')
+
+    #当前页第一个文章的编号
+    current_page_first = (int(page) - 1) * every_page_num
+
+    try:
+        contacts = p.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        contacts = p.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        contacts = p.page(p.num_pages)
+
+    return render(request, 'article_admin.html', context={
+        'contacts': contacts, 'every_page_num': every_page_num,
+        'current_page_first': current_page_first,
+    })
+
+
 
 @csrf_exempt
 def edit_article(request):
@@ -67,7 +90,7 @@ def edit_article(request):
             update_sql_obj.save()
             return render(request, 'article_admin.html')
         else:
-            ###添加新文章
+            ###添加新文章/`
             content = request.POST.get('content_post')
             title = request.POST.get('title_post')
             author = 'me'

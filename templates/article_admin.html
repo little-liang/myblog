@@ -61,12 +61,16 @@
             </thead>
 
             <tbody>
-                {% for article in article_list %}
+                {% for article in contacts %}
                   <tr row-id="{{ article.id }}">
                     <td scope="row"><label>
                       <input type="checkbox">
                     </label></td>
-                    <td scope="row">1</td>
+                    <td scope="row">
+{#                            {{ contacts.number  }}#}
+{#                            {% widthratio contacts.number|add:-1 1 every_page_num %}#}
+                        {{ current_page_first|add:forloop.counter }}
+                    </td>
                     <td>{{ article.title }}</td>
                     <td>{{ article.catagory }}</td>
                     <td>{{ article.publish_time }}</td>
@@ -88,17 +92,27 @@
     </div>
 
     <!--右侧栏 底部文章分页码-->
-    <div>
-        <ul class="pagination">
-            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-         </ul>
-    </div>
+	<div>
+		<ul class="pagination">
+			{% if contacts.has_previous %}
+				<li><a href="?page={{ contacts.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+			{% endif %}
+
+			{% for pg in contacts.paginator.page_range %}
+                {% if contacts.number == pg %}
+                    <li class="active" ><a href="?page={{ pg }}" >{{ pg }}</a></li>
+                {% else %}
+                    <li><a href="?page={{ pg }}">{{ pg }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+			{% if contacts.has_previous %}
+                <li><a href="?page={{ contacts.previous_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+			{% endif %}
+		</ul>
+	</div>
+
+
 </div>
 
 </body>

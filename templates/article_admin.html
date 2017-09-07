@@ -12,7 +12,7 @@
 
 <!--大标题-->
 <div class="page-header-for-admin">
-  <h1 class="text-center">HelloBlog</h1>
+    <h1 class="text-center">HelloBlog</h1>
 </div>
 
 
@@ -21,8 +21,10 @@
     <div class="list-group text-for-admin">
         <ul class="left-content-for-admin" id="drop1">
             <li>
-                <a href="#" class="list-group-item active" id="dropdown1">文章管理<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-                <ul class="left-content-for-admin" >
+                <a href="#" class="list-group-item active" id="dropdown1">文章管理<span
+                        class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span
+                        class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+                <ul class="left-content-for-admin">
                     <li><a href="#" class="list-group-item">文章管理</a></li>
                     <li><a href="#" class="list-group-item">文章管理</a></li>
                     <li><a href="#" class="list-group-item">文章管理</a></li>
@@ -37,29 +39,29 @@
     <!--右侧栏 显示章内容列表-->
     <div class="panel panel-default">
         <div class="panel-heading text-for-admin-2">
-            <a class="pull-right">&nbsp;&nbsp;删除</a>
-            <a href="{% url 'edit_article' %}" class="pull-right">新文章</a>
+            <a name="delete-all" class="pull-right">全部删除</a>
+            <a href="{% url 'edit_article' %}" class="pull-left">新文章</a>
 
         </div>
 
         <table class="table">
             <thead>
-                <tr>
-                    <th>全选</th>
-                    <th>序号</th>
-                    <th>标题</th>
-                    <th>分类</th>
-                    <th>发布时间</th>
-                    <th>作者</th>
-                    <th>操作</th>
-                </tr>
+            <tr>
+                <th><input name="checked-all" type="checkbox"></th>
+                <th>序号</th>
+                <th>标题</th>
+                <th>分类</th>
+                <th>发布时间</th>
+                <th>作者</th>
+                <th>操作</th>
+            </tr>
             </thead>
 
             <tbody>
-                {% for article in contacts %}
-                  <tr row-id="{{ article.id }}">
+            {% for article in contacts %}
+                <tr name="RowId" row-id="{{ article.id }}">
                     <td scope="row"><label>
-                      <input type="checkbox">
+                        <input name="checked-one" type="checkbox">
                     </label></td>
                     <td scope="row">
                         {{ current_page_first|add:forloop.counter }}
@@ -77,33 +79,35 @@
                             <span class="glyphicon glyphicon-pencil">编辑</span>
                         </a>
                     </td>
-                  </tr>
+                </tr>
 
-                {% endfor %}
+            {% endfor %}
             </tbody>
         </table>
     </div>
 
     <!--右侧栏 底部文章分页码-->
-	<div>
-		<ul class="pagination">
-			{% if contacts.has_previous %}
-				<li><a href="?page={{ contacts.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-			{% endif %}
+    <div>
+        <ul class="pagination">
+            {% if contacts.has_previous %}
+                <li><a href="?page={{ contacts.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+            {% endif %}
 
-			{% for pg in contacts.paginator.page_range %}
+            {% for pg in contacts.paginator.page_range %}
                 {% if contacts.number == pg %}
-                    <li class="active" ><a href="?page={{ pg }}" >{{ pg }}</a></li>
+                    <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
                 {% else %}
                     <li><a href="?page={{ pg }}">{{ pg }}</a></li>
                 {% endif %}
             {% endfor %}
 
-			{% if contacts.has_previous %}
-                <li><a href="?page={{ contacts.previous_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-			{% endif %}
-		</ul>
-	</div>
+            {% if contacts.has_previous %}
+                <li><a href="?page={{ contacts.previous_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
 
 
 </div>
@@ -111,19 +115,61 @@
 </body>
 <script src="/static/js/custom.js"></script>
 <script>
-    $(document).ready(function(){
-        $(document).on("click","[name='edit']",function(){
-            var rowId=$(this).closest('tr').attr("row-id");
+    $(document).ready(function () {
+        $(document).on("click", "[name='edit']", function () {
+            var rowId = $(this).closest('tr').attr("row-id");
             $.ajax({
-             type: "POST",
-             url: "{% url 'submit_article_id' %}",
-             data: { 'article_info': rowId},
-             dataType: "json",
-             success: function(data){
-                 console.log('ok');
+                type: "POST",
+                url: "{% url 'submit_article_id' %}",
+                data: {'article_info': rowId},
+                dataType: "json",
+                success: function (data) {
+                    console.log('ok');
                 }
-             });
-        });
+            });
+        }); //后台 POST
+
+        $(document).on("click", "[name='checked-all']", function () {
+            if (this.checked) {
+                $("[name='checked-one']").prop("checked", true);
+            } else {
+                $("[name='checked-one']").prop("checked", false);
+            }
+
+        }); //全选反选框
+
+
+        $(document).on("click", "[name='delete-all']", function () {
+
+            var select_checked_article_list = [];
+
+            //找出所有显示的主机
+            var checked_article_list = $("input[name='checked-one']");
+
+            //循环这些主机，
+            $.each(checked_article_list, function(index, ele){
+                //如果被选择了就放入selected_hosts列表中
+                if($(ele).prop("checked")){
+                    var bbb = $(ele).closest('tr').attr("row-id");
+                    select_checked_article_list.push(bbb);
+                }
+
+            });
+
+
+            //要一起删除的文章ID传到后台去
+            $.ajax({
+                type: "POST",
+                url: "{% url 'article_admin' %}",
+                data: {'select_checked_article_list': select_checked_article_list},
+                dataType: "json",
+                success: function (data) {
+                    console.log('ok');
+                }
+            });
+
+        });//拿到选择的文章ID
     });
+
 </script>
 </html>

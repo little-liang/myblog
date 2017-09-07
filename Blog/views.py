@@ -64,7 +64,6 @@ def edit_article(request):
             all_catagory_info_list = [line.name for line in all_catagory_info]
 
 
-
             return render(
                 request, 'edit_article.html', context={
                     'article_info': article_info, 'current_catagory_info': current_catagory_info,
@@ -78,6 +77,7 @@ def edit_article(request):
             delete_sql_obj = Article.objects.get(id=int(artitle_id))
             delete_sql_obj.delete()
             return HttpResponse("delete ok")
+
 
     ##修改文章
     elif request.POST:

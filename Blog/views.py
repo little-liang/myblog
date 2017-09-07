@@ -11,36 +11,46 @@ def index(request):
 
     return render(request, 'index.html')
 
+@csrf_exempt
 def article_admin(request):
-    every_page_num = 5  # 每页显示的记录数  #不加 order by 会有警告信息
-    p = Paginator(Article.objects.all().order_by('-publish_time',), every_page_num)
+    if request.POST:
+        #全部删除
+        if request.POST.getlist('select_checked_article_list[]'):
+            for line in request.POST.getlist('select_checked_article_list[]'):
+                delete_sql_obj = Article.objects.get(id=int(line))
+                delete_sql_obj.delete()
 
-    ##前端点击的page,第几页
-    page = request.GET.get('page')
+            return HttpResponse("delete all OK")
+    else:
+        every_page_num = 5  # 每页显示的记录数  #不加 order by 会有警告信息
+        p = Paginator(Article.objects.all().order_by('-publish_time',), every_page_num)
 
-    #当前页第一个文章的编号
-    if page == None:
-        page = 1
-    current_page_first = (int(page) - 1) * every_page_num
+        ##前端点击的page,第几页
+        page = request.GET.get('page')
 
-    try:
-        contacts = p.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        contacts = p.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        contacts = p.page(p.num_pages)
+        #当前页第一个文章的编号
+        if page == None:
+            page = 1
+        current_page_first = (int(page) - 1) * every_page_num
+
+        try:
+            contacts = p.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            contacts = p.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            contacts = p.page(p.num_pages)
 
 
-    for line in contacts:
-        line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d %H:%M:%S")
+        for line in contacts:
+            line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d %H:%M:%S")
 
 
-    return render(request, 'article_admin.html', context={
-        'contacts': contacts, 'every_page_num': every_page_num,
-        'current_page_first': current_page_first,
-    })
+        return render(request, 'article_admin.html', context={
+            'contacts': contacts, 'every_page_num': every_page_num,
+            'current_page_first': current_page_first,
+        })
 
 
 

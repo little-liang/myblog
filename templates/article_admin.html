@@ -12,7 +12,7 @@
 
 <!--大标题-->
 <div class="page-header-for-admin">
-{#  <h1 class="text-center">博客后台管理系统</h1>#}
+  <h1 class="text-center">HelloBlog</h1>
 </div>
 
 
@@ -34,18 +34,13 @@
 
 <!--右侧栏-->
 <div class="col-lg-9-for-admin">
-    <!--右侧栏 删除 添加新文章按钮-->
-    <div>
-        <a href="{% url 'edit_article' %}" class="pull-right">新文章</a>
-        <br/>
-        <br/>
-        <button>删除</button>
-        <br/>
-    </div>
-
     <!--右侧栏 显示章内容列表-->
     <div class="panel panel-default">
-        <div class="panel-heading text-for-admin-2">当前文章列表</div>
+        <div class="panel-heading text-for-admin-2">
+            <a class="pull-right">&nbsp;&nbsp;删除</a>
+            <a href="{% url 'edit_article' %}" class="pull-right">新文章</a>
+
+        </div>
 
         <table class="table">
             <thead>
@@ -67,8 +62,6 @@
                       <input type="checkbox">
                     </label></td>
                     <td scope="row">
-{#                            {{ contacts.number  }}#}
-{#                            {% widthratio contacts.number|add:-1 1 every_page_num %}#}
                         {{ current_page_first|add:forloop.counter }}
                     </td>
                     <td>{{ article.title }}</td>

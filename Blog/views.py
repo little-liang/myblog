@@ -8,7 +8,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from Blog.models import *
 from django.utils import timezone
 def index(request):
-
     return render(request, 'index.html')
 
 @csrf_exempt

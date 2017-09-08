@@ -24,6 +24,7 @@ class Article(models.Model):
     content = models.TextField()
     author = models.CharField(max_length=8)
     canbe_content = models.BooleanField(default=True)
+    viwes_num = models.IntegerField(verbose_name='浏览数')
 
 
     def __str__(self):

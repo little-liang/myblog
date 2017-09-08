@@ -1,14 +1,35 @@
 
 from django.shortcuts import render, HttpResponse, redirect
-import json,datetime
+import json, datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # coding:utf-8
 # Create your views here.
 from Blog.models import *
 from django.utils import timezone
+
 def index(request):
-    return render(request, 'index.html')
+    article_info = Article.objects.all().order_by('publish_time')
+
+    for line in article_info:
+        line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d")
+        print(line.viwes_num)
+
+    return render(request, 'index.html', context={'article_info': article_info})
+
+def list(request):
+    article_info = Article.objects.all()
+    return render(request, 'list.html', context={'article_info': article_info})
+
+def error(request):
+    return render(request, '404.html')
+
+def show(request):
+    article = Article.objects.get(id=17)
+
+    return render(request, 'show.html', context={'article': article})
+
+
 
 @csrf_exempt
 def article_admin(request):
@@ -43,7 +64,7 @@ def article_admin(request):
 
 
         for line in contacts:
-            line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d %H:%M:%S")
+            line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d")
 
 
         return render(request, 'article_admin.html', context={

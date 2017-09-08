@@ -58,6 +58,9 @@
         <br/>
         <br/>
 
+        <span>摘要 : </span>
+        <textarea id="summary" style="width:700px;height:40px;"></textarea>
+
         <textarea id="editor_id" name="content" style="width:800px;height:400px;visibility:hidden;"></textarea>
         <br/>
 
@@ -96,6 +99,7 @@
 
         if ('{{ article_info }}' != ''){
             $("[name='title']").val('{{ article_info.title|safe }}');
+            $("#summary").val("{{ article_info.summary }}");
         }
 
 
@@ -107,6 +111,7 @@
             }
             data['catagory_post'] = $("#catatory").val();
             data['content_post'] = editor.html().replace(/(\n)/g, "");
+            data['summary_post'] = $("#summary").val();
             data['title_post'] = $("[name='title']").val();
 
             console.log(data);

@@ -95,19 +95,19 @@
 
     <!--文章 展示区域-->
 
-    {% for arrticle in article_info %}
+    {% for article in article_info %}
       <article class="excerpt excerpt-1" style="">
-        <a class="focus" href="#" title="{{ arrticle.title }}" target="_blank" ><img class="thumb" data-original="/static/images/201610181739277776.jpg" src="/static/images/201610181739277776.jpg" alt="{{ arrticle.title }}"  style="display: inline;"></a>
+        <a class="focus" href="#" title="{{ article.title }}" target="_blank" ><img class="thumb" data-original="/static/images/201610181739277776.jpg" src="/static/images/201610181739277776.jpg" alt="{{ article.title }}"  style="display: inline;"></a>
 
-        <header><a class="cat" href="#" title="{{ arrticle.catagory }}" >{{ arrticle.catagory }}<i></i></a>
-			<h2><a href="#" title="{{ arrticle.title }}" target="_blank" >{{ arrticle.title }}</a></h2>
+        <header><a class="cat" href="#" title="{{ article.catagory }}" >{{ article.catagory }}<i></i></a>
+			<h2><a href="#" title="{{ article.title }}" target="_blank" >{{ article.title }}</a></h2>
 		</header>
 
 		<p class="meta">
-			<time class="time"><i class="glyphicon glyphicon-time"></i>{{ arrticle.publish_time }}</time>
-			<span class="views"><i class="glyphicon glyphicon-eye-open"></i> {{ arrticle.viwes_num }}</span> <a class="comment" href="##comment" title="评论" target="_blank" ><i class="glyphicon glyphicon-comment"></i> 4</a>
+			<time class="time"><i class="glyphicon glyphicon-time"></i>{{ article.publish_time }}</time>
+			<span class="views"><i class="glyphicon glyphicon-eye-open"></i> {{ article.viwes_num }}</span> <a class="comment" href="##comment" title="评论" target="_blank" ><i class="glyphicon glyphicon-comment"></i> 4</a>
 		</p>
-		<p class="note">{{ arrticle.title }}</p>
+		<p class="note">{{ article.content }}</p>
 	  </article>
 
     {% endfor %}

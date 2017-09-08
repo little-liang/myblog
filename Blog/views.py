@@ -10,11 +10,8 @@ from django.utils import timezone
 
 def index(request):
     article_info = Article.objects.all().order_by('publish_time')
-
     for line in article_info:
         line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d")
-        print(line.viwes_num)
-
     return render(request, 'index.html', context={'article_info': article_info})
 
 def list(request):
@@ -115,12 +112,16 @@ def edit_article(request):
             update_id = request.POST.get('id')
             update_title = request.POST.get('title_post')
             update_content = request.POST.get('content_post')
+            update_summary = request.POST.get('summary_post')
+
 
             update_sql_obj = Article.objects.get(id=int(update_id))
 
 
             update_sql_obj.title = update_title
             update_sql_obj.content = update_content
+            update_sql_obj.summary = update_summary
+            update_sql_obj.viwes_num = 1
 
             catagory_obj = Catagory.objects.get(name=request.POST.get('catagory_post'))
 
@@ -132,6 +133,7 @@ def edit_article(request):
             ###添加新文章/`
             content = request.POST.get('content_post')
             title = request.POST.get('title_post')
+            summary = request.POST.get('summary_post')
             author = 'me'
             canbe_content = True
 
@@ -143,6 +145,8 @@ def edit_article(request):
                 content=content,
                 author=author,
                 canbe_content=canbe_content,
+                summary=summary,
+                viwes_num=1,
             )
 
             create_sql_obj.save()

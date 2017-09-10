@@ -1,53 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Django default" uuid="073a11b5-9ba2-468f-867e-47fccb407146">
+  <data-source name="Django default" uuid="6f6af86c-7b17-4267-8e97-f9e12acdb7d7">
     <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
-    <table name="Blog_article" schema="" catalog="" type="TABLE">
-      <column name="title" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="publish_time" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="content" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="author" sqlType="VARCHAR(8)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="catagory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="canbe_content" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_Blog_article_1" columns="catagory_id" ref-table="Blog_catagory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="Blog_article_catagory_id_c9275219" unique="true" columns="catagory_id"/>
-    </table>
-    <table name="Blog_article_tags" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="article_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="tag_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_Blog_article_tags_1" columns="tag_id" ref-table="Blog_tag" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_Blog_article_tags_2" columns="article_id" ref-table="Blog_article" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="Blog_article_tags_tag_id_55eb949a" unique="true" columns="tag_id"/>
-      <index name="Blog_article_tags_article_id_efedb866" unique="true" columns="article_id"/>
-      <index name="Blog_article_tags_article_id_tag_id_6d5327d2_uniq" unique="true" columns="article_id,tag_id"/>
-    </table>
-    <table name="Blog_catagory" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="Blog_comment" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="author" sqlType="VARCHAR(8)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="publish_time" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="content" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="article_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="oo" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_Blog_comment_1" columns="article_id" ref-table="Blog_article" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="Blog_comment_article_id_f86648d0" unique="true" columns="article_id"/>
-    </table>
-    <table name="Blog_tag" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR(16)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
     <table name="auth_group" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR(80)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
@@ -109,6 +65,52 @@
       <index name="auth_user_user_permissions_permission_id_1fbb5f2c" unique="true" columns="permission_id"/>
       <index name="auth_user_user_permissions_user_id_a95ead1b" unique="true" columns="user_id"/>
       <index name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq" unique="true" columns="user_id,permission_id"/>
+    </table>
+    <table name="backend_article" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="publish_time" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="author" sqlType="VARCHAR(8)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="catagory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="canbe_content" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="viwes_num" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="summary" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_backend_article_1" columns="catagory_id" ref-table="backend_catagory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="backend_article_catagory_id_3f488969" unique="true" columns="catagory_id"/>
+    </table>
+    <table name="backend_article_tags" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="article_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="tag_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_backend_article_tags_1" columns="tag_id" ref-table="backend_tag" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_backend_article_tags_2" columns="article_id" ref-table="backend_article" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="backend_article_tags_tag_id_d5604609" unique="true" columns="tag_id"/>
+      <index name="backend_article_tags_article_id_5ee6f3cf" unique="true" columns="article_id"/>
+      <index name="backend_article_tags_article_id_tag_id_3acea254_uniq" unique="true" columns="article_id,tag_id"/>
+    </table>
+    <table name="backend_catagory" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="backend_comment" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="author" sqlType="VARCHAR(8)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="publish_time" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="article_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="oo" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_backend_comment_1" columns="article_id" ref-table="backend_article" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="backend_comment_article_id_61c1548c" unique="true" columns="article_id"/>
+    </table>
+    <table name="backend_tag" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(16)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
     </table>
     <table name="django_admin_log" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>

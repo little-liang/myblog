@@ -102,8 +102,8 @@
                 {% endif %}
             {% endfor %}
 
-            {% if contacts.has_previous %}
-                <li><a href="?page={{ contacts.previous_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+            {% if contacts.has_next  %}
+                <li><a href="?page={{ contacts.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
                 </li>
             {% endif %}
         </ul>

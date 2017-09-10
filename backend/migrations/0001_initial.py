@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('author', models.CharField(max_length=8)),
                 ('publish_time', models.DateField(auto_now_add=True)),
                 ('content', models.TextField()),
-                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.Article')),
+                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend.Article')),
             ],
         ),
         migrations.CreateModel(
@@ -51,11 +51,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='catagory',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Blog.Catagory'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend.Catagory'),
         ),
         migrations.AddField(
             model_name='article',
             name='tags',
-            field=models.ManyToManyField(to='Blog.Tag'),
+            field=models.ManyToManyField(to='backend.Tag'),
         ),
     ]

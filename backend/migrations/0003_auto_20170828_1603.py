@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Blog', '0002_article_canbe_content'),
+        ('backend', '0002_article_canbe_content'),
     ]
 
     operations = [

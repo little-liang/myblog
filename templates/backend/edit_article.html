@@ -77,7 +77,7 @@
     </div>
 
 </body>
-{#<script src="/static/js/custom.js"></script>#}
+<script src="/static/js/custom.js"></script>
 <script src="/static/js/jquery-3.2.1.js"></script>
 <script src="/static/plugins/kindeditor/kindeditor-all.js"></script>
 <script>
@@ -118,7 +118,7 @@
               $.ajax({
                   type: "POST",
                   dataType: "json",
-                  url: {% url 'edit_article' %},
+                  url: '{% url 'edit_article' %}',
                   data: data,
                   async : false,
                   success:function(data){

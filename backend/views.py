@@ -5,26 +5,26 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # coding:utf-8
 # Create your views here.
-from Blog.models import *
+from backend.models import *
 from django.utils import timezone
 
 def index(request):
     article_info = Article.objects.all().order_by('publish_time')
     for line in article_info:
         line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d")
-    return render(request, 'index.html', context={'article_info': article_info})
+    return render(request, 'frontend/index.html', context={'article_info': article_info})
 
 def list(request):
     article_info = Article.objects.all()
-    return render(request, 'list.html', context={'article_info': article_info})
+    return render(request, 'frontend/list.html', context={'article_info': article_info})
 
 def error(request):
-    return render(request, '404.html')
+    return render(request, 'frontend/404.html')
 
 def show(request):
     article = Article.objects.get(id=17)
 
-    return render(request, 'show.html', context={'article': article})
+    return render(request, 'frontend/show.html', context={'article': article})
 
 
 
@@ -64,7 +64,7 @@ def article_admin(request):
             line.publish_time = datetime.datetime.strftime(line.publish_time, "%Y-%m-%d")
 
 
-        return render(request, 'article_admin.html', context={
+        return render(request, 'backend/article_admin.html', context={
             'contacts': contacts, 'every_page_num': every_page_num,
             'current_page_first': current_page_first,
         })
@@ -92,7 +92,7 @@ def edit_article(request):
 
 
             return render(
-                request, 'edit_article.html', context={
+                request, 'backend/edit_article.html', context={
                     'article_info': article_info, 'current_catagory_info': current_catagory_info,
                     'all_catagory_info_list': all_catagory_info_list,
                 }
@@ -128,7 +128,7 @@ def edit_article(request):
             update_sql_obj.catagory=catagory_obj
 
             update_sql_obj.save()
-            return render(request, 'article_admin.html')
+            return render(request, 'backend/article_admin.html')
         else:
             ###添加新文章/`
             content = request.POST.get('content_post')
@@ -164,7 +164,7 @@ def edit_article(request):
     else:
         all_catagory_info = Catagory.objects.all()
         all_catagory_info_list = [line.name for line in all_catagory_info]
-        return render(request, 'edit_article.html', context={'all_catagory_info_list': all_catagory_info_list})
+        return render(request, 'backend/edit_article.html', context={'all_catagory_info_list': all_catagory_info_list})
 
 @csrf_exempt
 def submit_article_id(request):

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Django default">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1">
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="auth_group"/>
+    <table id="4" parent="2" name="auth_group_permissions"/>
+    <table id="5" parent="2" name="auth_permission"/>
+    <table id="6" parent="2" name="auth_user"/>
+    <table id="7" parent="2" name="auth_user_groups"/>
+    <table id="8" parent="2" name="auth_user_user_permissions"/>
+    <table id="9" parent="2" name="backend_article"/>
+    <table id="10" parent="2" name="backend_article_tags"/>
+    <table id="11" parent="2" name="backend_catagory"/>
+    <table id="12" parent="2" name="backend_comment"/>
+    <table id="13" parent="2" name="backend_tag"/>
+    <table id="14" parent="2" name="django_admin_log"/>
+    <table id="15" parent="2" name="django_content_type"/>
+    <table id="16" parent="2" name="django_migrations"/>
+    <table id="17" parent="2" name="django_session"/>
+    <table id="18" parent="2" name="sqlite_sequence"/>
+    <column id="19" parent="3" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="3" name="name">
+      <DataType>VARCHAR(80)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="21" parent="3">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="4" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="4" name="group_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="4" name="permission_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="4" name="auth_group_permissions_permission_id_84c5c92e">
+      <ColNames>permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="26" parent="4" name="auth_group_permissions_group_id_b120cbf9">
+      <ColNames>group_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="27" parent="4" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+      <ColNames>group_id
+permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="4">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="4" name="#FAKE_auth_group_permissions_1">
+      <ColNames>permission_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_permission</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="30" parent="4" name="#FAKE_auth_group_permissions_2">
+      <ColNames>group_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_group</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="31" parent="5" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="5" name="content_type_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="5" name="codename">
+      <DataType>VARCHAR(100)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="5" name="name">
+      <DataType>VARCHAR(255)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="5" name="auth_permission_content_type_id_2f476e4b">
+      <ColNames>content_type_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="5" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+      <ColNames>content_type_id
+codename</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="5">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="38" parent="5" name="#FAKE_auth_permission_1">
+      <ColNames>content_type_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>django_content_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="39" parent="6" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="6" name="password">
+      <DataType>VARCHAR(128)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="6" name="last_login">
+      <DataType>DATETIME(0,-1)|12</DataType>
+    </column>
+    <column id="42" parent="6" name="is_superuser">
+      <DataType>BOOL(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="6" name="first_name">
+      <DataType>VARCHAR(30)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="6" name="last_name">
+      <DataType>VARCHAR(30)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="6" name="email">
+      <DataType>VARCHAR(254)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="6" name="is_staff">
+      <DataType>BOOL(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="6" name="is_active">
+      <DataType>BOOL(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="6" name="date_joined">
+      <DataType>DATETIME(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="6" name="username">
+      <DataType>VARCHAR(150)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="7" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="7" name="user_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="7" name="group_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="7" name="auth_user_groups_group_id_97559544">
+      <ColNames>group_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="55" parent="7" name="auth_user_groups_user_id_6a12ed8b">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="7" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+      <ColNames>user_id
+group_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="7" name="#FAKE_auth_user_groups_1">
+      <ColNames>group_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_group</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="59" parent="7" name="#FAKE_auth_user_groups_2">
+      <ColNames>user_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="60" parent="8" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="8" name="user_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="8" name="permission_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="63" parent="8" name="auth_user_user_permissions_permission_id_1fbb5f2c">
+      <ColNames>permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="64" parent="8" name="auth_user_user_permissions_user_id_a95ead1b">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="8" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+      <ColNames>user_id
+permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="67" parent="8" name="#FAKE_auth_user_user_permissions_1">
+      <ColNames>permission_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_permission</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="68" parent="8" name="#FAKE_auth_user_user_permissions_2">
+      <ColNames>user_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="69" parent="9" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="9" name="title">
+      <DataType>VARCHAR(64)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="9" name="publish_time">
+      <DataType>DATE(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="9" name="content">
+      <DataType>TEXT(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="9" name="author">
+      <DataType>VARCHAR(8)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="9" name="catagory_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="9" name="canbe_content">
+      <DataType>BOOL(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="9" name="viwes_num">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="9" name="summary">
+      <DataType>VARCHAR(64)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="78" parent="9" name="backend_article_catagory_id_3f488969">
+      <ColNames>catagory_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="79" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="80" parent="9" name="#FAKE_backend_article_1">
+      <ColNames>catagory_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>backend_catagory</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="81" parent="10" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="10" name="article_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="10" name="tag_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="84" parent="10" name="backend_article_tags_tag_id_d5604609">
+      <ColNames>tag_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="85" parent="10" name="backend_article_tags_article_id_5ee6f3cf">
+      <ColNames>article_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="86" parent="10" name="backend_article_tags_article_id_tag_id_3acea254_uniq">
+      <ColNames>article_id
+tag_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="87" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="88" parent="10" name="#FAKE_backend_article_tags_1">
+      <ColNames>tag_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>backend_tag</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="89" parent="10" name="#FAKE_backend_article_tags_2">
+      <ColNames>article_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>backend_article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="90" parent="11" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="11" name="name">
+      <DataType>VARCHAR(30)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="92" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="93" parent="12" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="12" name="author">
+      <DataType>VARCHAR(8)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="12" name="publish_time">
+      <DataType>DATE(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="12" name="content">
+      <DataType>TEXT(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="97" parent="12" name="article_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="12" name="oo">
+      <DataType>VARCHAR(64)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="99" parent="12" name="backend_comment_article_id_61c1548c">
+      <ColNames>article_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="100" parent="12">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="101" parent="12" name="#FAKE_backend_comment_1">
+      <ColNames>article_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>backend_article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="102" parent="13" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="13" name="name">
+      <DataType>VARCHAR(16)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="104" parent="13">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="105" parent="14" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="14" name="object_id">
+      <DataType>TEXT(0,-1)|12</DataType>
+    </column>
+    <column id="107" parent="14" name="object_repr">
+      <DataType>VARCHAR(200)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="14" name="action_flag">
+      <DataType>SMALLINT UNSIGNED(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="14" name="change_message">
+      <DataType>TEXT(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="14" name="content_type_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="111" parent="14" name="user_id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="14" name="action_time">
+      <DataType>DATETIME(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="113" parent="14" name="django_admin_log_user_id_c564eba6">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="114" parent="14" name="django_admin_log_content_type_id_c4bce8eb">
+      <ColNames>content_type_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="115" parent="14">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="116" parent="14" name="#FAKE_django_admin_log_1">
+      <ColNames>user_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="117" parent="14" name="#FAKE_django_admin_log_2">
+      <ColNames>content_type_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>django_content_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="118" parent="15" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="119" parent="15" name="app_label">
+      <DataType>VARCHAR(100)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="15" name="model">
+      <DataType>VARCHAR(100)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="121" parent="15" name="django_content_type_app_label_model_76bd3d3b_uniq">
+      <ColNames>app_label
+model</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="122" parent="15">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="123" parent="16" name="id">
+      <DataType>INTEGER(0,-1)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="124" parent="16" name="app">
+      <DataType>VARCHAR(255)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="125" parent="16" name="name">
+      <DataType>VARCHAR(255)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="126" parent="16" name="applied">
+      <DataType>DATETIME(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="127" parent="16">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="128" parent="17" name="session_key">
+      <DataType>VARCHAR(40)(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="17" name="session_data">
+      <DataType>TEXT(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="130" parent="17" name="expire_date">
+      <DataType>DATETIME(0,-1)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="131" parent="17" name="django_session_expire_date_a5c62663">
+      <ColNames>expire_date</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="132" parent="17">
+      <ColNames>session_key</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="133" parent="18" name="name">
+      <DataType>(0,-1)|12</DataType>
+    </column>
+    <column id="134" parent="18" name="seq">
+      <DataType>(0,-1)|12</DataType>
+    </column>
+  </database-model>
+</dataSource>

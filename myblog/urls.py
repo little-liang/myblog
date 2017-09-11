@@ -15,16 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from backend.views import *
+from frontend.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
+    url(r'^404.html$', error, name='error'),
+    url(r'^readers.html$', readers, name='readers'),
+    url(r'^tags.html$', tags, name='tags'),
+    url(r'^article.html$', article, name='article'),
+    url(r'^links.html$', links, name='links'),
+    url(r'^UpgradeBrowser.html$', UpgradeBrowser, name='UpgradeBrowser'),
     url(r'^backend/', include('backend.urls')),
-    url(r'^show/$', show, name='show'),
-    url(r'^list/$', list, name='list'),
-    url(r'^error/$', error, name='error'),
-    # url(r'^article_admin/$', article_admin, name='article_admin'),
-    # url(r'^edit_article/$', edit_article, name='edit_article'),
-
+    url(r'^frontend/', include('frontend.urls')),
 ]

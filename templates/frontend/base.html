@@ -1,1268 +1,210 @@
-
-    <!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui=yes">
-        <title>WebApproach - Approaching Web</title>
-    <meta name="keywords" content="Tint,Tinection2,Ucenter and Market,用户中心,WordPress模板,WebApproach,WooCommerce">
-    <meta name="description" content="Web,WordPress资源分享,知言博客">
-    <!--    <meta name="author" content="Your Name,Your Email">-->
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp"> <!-- 禁止移动端百度转码 -->
-    <meta http-equiv="Cache-Control" content="private">
-    <!--    <meta http-equiv="Cache-Control" content="max-age=0">-->
-    <!--    <meta http-equiv="Cache-Control" content="must-revalidate">-->
-    <meta name="apple-mobile-web-app-title" content="WebApproach">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="format-detection" content="telephone=no, email=no"> <!-- 禁止自动识别电话号码和邮箱 -->
-            <link rel="shortcut icon" href="https://webapproach.net/wp-content/themes/Tint/assets/img/favicon.ico" >
-                <link rel="alternate icon" type="image/png" href="https://webapproach.net/wp-content/themes/Tint/assets/img/favicon.png" >
-        <link rel='https://api.w.org/' href="https://webapproach.net/api" >
-    <link rel="alternate" type="application/rss+xml" title="WebApproach RSS Feed" href="https://webapproach.net/feed" />
-    <link rel="alternate" type="application/atom+xml" title="WebApproach Atom Feed" href="https://webapproach.net/feed/atom" />
-    <link rel="pingback" href="https://webapproach.net/xmlrpc.php" />
-    <!--[if lt IE 9]>
-    <script src="https://webapproach.net/wp-content/themes/Tint/assets/vender/js/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://webapproach.net/wp-content/themes/Tint/assets/vender/js/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!--[if lte IE 7]>
-    <script type="text/javascript">
-        window.location.href = "https://webapproach.net/site/upgrade-browser";
-    </script>
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="https://oc1i5a75n.qnssl.com/wp-content/themes/Tint/assets/css/home-b9e5f2efd6.css"  />
-    <!-- 页头自定义代码 -->
-    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?1e416ff3216a6e5c9545db96b0619145";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>    <link rel='dns-prefetch' href='//staticfile.qnssl.com' />
-<link rel='dns-prefetch' href='//oc1i5a75n.qnssl.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel='stylesheet' id='crayon-theme-coy-css'  href='https://webapproach.net/wp-content/plugins/crayon-syntax-highlighter/themes/coy/coy.css?ver=_2.7.2_beta' type='text/css' media='all' />
-<link rel='stylesheet' id='crayon-font-droid-sans-mono-css'  href='https://webapproach.net/wp-content/plugins/crayon-syntax-highlighter/fonts/droid-sans-mono.css?ver=_2.7.2_beta' type='text/css' media='all' />
-<script type='text/javascript' src='https://staticfile.qnssl.com/jquery/2.2.1/jquery.min.js'></script>
-<link rel='https://api.w.org/' href='https://webapproach.net/api/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://webapproach.net/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://webapproach.net/wp-includes/wlwmanifest.xml" />
-
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HelloBlog</title>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/nprogress.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+<link rel="apple-touch-icon-precomposed" href="/static/images/icon/icon.png">
+<link rel="shortcut icon" href="/static/images/icon/favicon.ico">
+<script src="/static/js/jquery-2.1.4.min.js"></script>
+<script src="/static/js/nprogress.js"></script>
+<script src="/static/js/jquery.lazyload.min.js"></script>
+<!--[if gte IE 9]>
+  <script src="/static/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="/static/js/html5shiv.min.js" type="text/javascript"></script>
+  <script src="/static/js/respond.min.js" type="text/javascript"></script>
+  <script src="/static/js/selectivizr-min.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+  <script>window.location.href='upgrade-browser.html';</script>
+<![endif]-->
 </head>
-<body class="home blog is-loadingApp cms-home">
-    <div class="loading-line"></div>
-        <!-- 顶部公告 -->
-        <!-- Bulletins cached 2017-07-18 14:02:08 -->
-        <header class="header common-header white">
-        <input type="checkbox" id="menustate" class="menustate hide">
-        <nav id="header-nav" class="navigation container clearfix" role="navigation">
-            <!-- Menu Icon -->
-            <li class="menuicon visible-xs-block">
-                <label class="menuicon-label" for="menustate" aria-hidden="true">
-					<span class="menuicon-bread menuicon-bread-top">
-						<span class="menuicon-bread-crust menuicon-bread-crust-top"></span>
-					</span>
-                    <span class="menuicon-bread menuicon-bread-bottom">
-						<span class="menuicon-bread-crust menuicon-bread-crust-bottom"></span>
-					</span>
-                </label>
-<!--                <a href="#menustate" class="menuanchor menuanchor-open" id="menuanchor-open">-->
-<!--                    <span class="menuanchor-label">Open Menu</span>-->
-<!--                </a>-->
-<!--                <a href="#" class="menuanchor menuanchor-close" id="menuanchor-close">-->
-<!--                    <span class="menuanchor-label">Close Menu</span>-->
-<!--                </a>-->
-            </li>
-            <!-- Logo -->
-            <a class="logo nav-col" href="https://webapproach.net" title="WebApproach">
-                <img src="https://webapproach.net/wp-content/themes/Tint/assets/img/logo.png" alt="WebApproach">
+{% block custom1 %}
+<body class="user-select">
+{% endblock %}
+<header class="header">
+  <nav class="navbar navbar-default" id="navbar">
+    <div class="container">
+      <div class="header-topbar hidden-xs link-border">
+        <ul class="site-nav topmenu">
+          <li><a href="{% url 'tags' %}">标签云</a></li>
+          <li><a href="{% url 'readers' %}" rel="nofollow">读者墙</a></li>
+          <li><a href="{% url 'links' %}" rel="nofollow">友情链接</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" rel="nofollow">关注本站 <span class="caret"></span></a>
+            <ul class="dropdown-menu header-topbar-dropdown-menu">
+              <li><a data-toggle="modal" data-target="#WeChat" rel="nofollow"><i class="fa fa-weixin"></i> 微信</a></li>
+              <li><a href="#" rel="nofollow"><i class="fa fa-weibo"></i> 微博</a></li>
+              <li><a data-toggle="modal" data-target="#areDeveloping" rel="nofollow"><i class="fa fa-rss"></i> RSS</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a data-toggle="modal" data-target="#loginModal" class="login" rel="nofollow">Hi,请登录</a>&nbsp;&nbsp;<a href="javascript:;" class="register" rel="nofollow">我要注册</a>&nbsp;&nbsp;<a href="" rel="nofollow">找回密码</a> </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <h1 class="logo hvr-bounce-in"><a href="" title=""><img src="/static/images/logo.png" alt=""></a></h1>
+      </div>
+      <div class="collapse navbar-collapse" id="header-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden-index active"><a data-cont="首页" href="{% url 'index' %}">首页</a></li>
+          <li><a href="{% url 'category' %}">前端技术</a></li>
+          <li><a href="{% url 'category' %}">后端程序</a></li>
+          <li><a href="{% url 'category' %}">管理系统</a></li>
+          <li><a href="{% url 'category' %}">授人以渔</a></li>
+          <li><a href="{% url 'category' %}">程序人生</a></li>
+        </ul>
+        <form class="navbar-form visible-xs" action="/Search" method="post">
+          <div class="input-group">
+            <input type="text" name="keyword" class="form-control" placeholder="请输入关键字" maxlength="20" autocomplete="off">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn-search" name="search" type="submit">搜索</button>
+            </span> </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{% block container %}
+<section class="container">
+  <div class="content-wrap">
+    <div class="content">
+      <div class="jumbotron">
+        <h1>欢迎访问异清轩博客</h1>
+        <p>在这里可以看到前端技术，后端程序，网站内容管理系统等文章，还有我的程序人生！</p>
+      </div>
+      <div id="focusslide" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#focusslide" data-slide-to="0" class="active"></li>
+          <li data-target="#focusslide" data-slide-to="1"></li>
+          <li data-target="#focusslide" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <a href="" target="_blank"><img src="/static/images/banner/banner_01.jpg" alt="" class="img-responsive"></a>
+            <!--<div class="carousel-caption"> </div>-->
+          </div>
+          <div class="item"> <a href="" target="_blank"><img src="/static/images/banner/banner_02.jpg" alt="" class="img-responsive"></a>
+            <!--<div class="carousel-caption"> </div>-->
+          </div>
+          <div class="item"> <a href="" target="_blank"><img src="/static/images/banner/banner_03.jpg" alt="" class="img-responsive"></a>
+            <!--<div class="carousel-caption"> </div>-->
+          </div>
+        </div>
+        <a class="left carousel-control" href="#focusslide" role="button" data-slide="prev" rel="nofollow"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">上一个</span> </a> <a class="right carousel-control" href="#focusslide" role="button" data-slide="next" rel="nofollow"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">下一个</span> </a> </div>
+      <article class="excerpt-minic excerpt-minic-index">
+        <h2><span class="red">【今日推荐】</span><a href="" title="">从下载看我们该如何做事</a></h2>
+        <p class="note">一次我下载几部电影，发现如果同时下载多部要等上几个小时，然后我把最想看的做个先后排序，去设置同时只能下载一部，结果是不到一杯茶功夫我就能看到最想看的电影。 这就像我们一段时间内想干成很多事情，是同时干还是有选择有顺序的干，结果很不一样。同时...</p>
+      </article>
+      <div class="title">
+        <h3>最新发布</h3>
+        <div class="more">
+            <a href="">PHP</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
+        </div>
+
+      {% for article in article_info %}
+        <article class="excerpt excerpt-1">
+            <a class="focus" href="frontend/article.html" title="">
+                <img class="thumb" data-original="/static/images/excerpt.jpg" src="/static/images/excerpt.jpg" alt="">
             </a>
-            <!-- Top Menu -->
-            <!-- Nav cached 2017-07-18 14:01:18 --><ul id="header-menu" class="header-menu nav-col"><li id="menu-item-1257" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1257"><a href="https://webapproach.net/">首页</a></li>
-<li id="menu-item-1258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1258"><a href="#">分类</a>
-<ul class="sub-menu">
-	<li id="menu-item-1260" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1260"><a href="https://webapproach.net/category/tinection">Tinection</a></li>
-	<li id="menu-item-1261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1261"><a href="https://webapproach.net/category/wpbaike">WordPress</a></li>
-	<li id="menu-item-1375" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1375"><a href="https://webapproach.net/category/wordpress-plugins">WordPress插件</a></li>
-	<li id="menu-item-1262" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1262"><a href="https://webapproach.net/category/wpthemes">WordPress主题</a></li>
-	<li id="menu-item-1265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1265"><a href="https://webapproach.net/category/tech">软件代码</a></li>
-	<li id="menu-item-1362" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1362"><a href="https://webapproach.net/category/psd-html-template">PSD/HTML素材</a></li>
-	<li id="menu-item-1263" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1263"><a href="https://webapproach.net/category/video">影音资源</a></li>
-	<li id="menu-item-1264" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1264"><a href="https://webapproach.net/category/diary">日志</a></li>
-</ul>
-</li>
-<li id="menu-item-3499" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3499"><a href="https://webapproach.net/tag/tint">♥ Tint ♥</a></li>
-<li id="menu-item-3453" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3453"><a href="https://webapproach.net/shop">商店</a></li>
-<li id="menu-item-3619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3619"><a href="https://qa.webapproach.net/">问答</a></li>
-</ul><!-- Nav cache end -->            <!-- End Top Menu -->
-            <!-- Header Right Tools -->
-            <ul class="header-tool-menu nav-col pull-right">
-                <li class="nav-search"><a href="javascript:void(0)" data-toggle="modal" data-target="#globalSearch" data-backdrop="1"><span class="tico tico-search"></span></a></li>
-                                                    <li class="login-actions">
-                        <a href="https://webapproach.net/m/signin?redirect_to=https%3A%2F%2Fwebapproach.net%2F" class="login-link bind-redirect"><span>登录/注册</span></a>
-                    </li>
-                            </ul>
-        </nav>
-    </header><div id="content" class="wrapper container right-aside">
-                <!-- 顶部Slides + Popular -->
-        <section id="mod-show" class="content-section clearfix">
-            <!-- 幻灯 -->
-<!-- Slide cached 2017-07-18 14:02:08 -->
-<div id="slider" class="col-md-8 block2">
-    <div class="slides-wrap">
-                    <ul>
-                                    <li class="slider-item">
-                        <div class="slider-thumb">
-                            <a href="https://webapproach.net/tint.html">
-                                <img width="700" height="350" src="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2016/12/screenshot.png&q=90&w=750&h=375&zc=1" class="thumb-large wp-post-image" alt="WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]">
-                            </a>
-                        </div>
-                        <div class="slider-content">
-                            <span class="meta-category"><a href="https://webapproach.net/category/wpthemes" rel="category tag">WP主题</a></span>
-                            <h2 class="h3 slider-title">
-                                <a href="https://webapproach.net/tint.html">WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]</a>
-                            </h2>
-                            <div class="slider-meta mt5">
-                                <div class="entry-meta entry-meta-1">
-                                    <span class="author vcard"><a class="url" href="https://webapproach.net/@Touchumind">Touchumind</a></span>
-                                    <span class="entry-date">
-                                                                    <time class="entry-date published updated" datetime="2016-12-25T19:36:43+08:00" title="2016-12-25T19:36:43+08:00">December 25, 2016</time>
-                        </span>
-                                    <span class="comments-link"><i class="tico tico-comments-o"></i><a href="https://webapproach.net/tint.html#respond">134</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                            </ul>
-            </div>
-</div>            <!-- 热门文章 -->
-    <!-- Popular posts cached 2017-07-18 14:02:08 -->
-<div id="popular" class="col-md-4 block3">
-    <aside class="block3-widget">
-        <h2 class="widget-title">Popular</h2>
-        <div class="block3-widget-content">
-                                <article class="block-item">
-                <div class="entry-thumb">
-                    <a href="https://webapproach.net/tint-feedback.html"><img width="100" height="75" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/themes/Tint/assets/img/thumb/8.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tint主题建议和问题反馈"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="h5 entry-title">
-                        <a href="https://webapproach.net/tint-feedback.html">Tint主题建议和问题反馈</a>
-                    </h2>
-                    <div class="block-meta text-muted">
-                        <span class="entry-date"><time class="entry-date published" datetime="" title="">June 12, 2017</time></span>
-                    </div>
-                </div>
-            </article>
-                        <article class="block-item">
-                <div class="entry-thumb">
-                    <a href="https://webapproach.net/tint.html"><img width="100" height="75" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2016/12/screenshot-225x150.png&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="h5 entry-title">
-                        <a href="https://webapproach.net/tint.html">WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]</a>
-                    </h2>
-                    <div class="block-meta text-muted">
-                        <span class="entry-date"><time class="entry-date published" datetime="" title="">December 25, 2016</time></span>
-                    </div>
-                </div>
-            </article>
-                        <article class="block-item">
-                <div class="entry-thumb">
-                    <a href="https://webapproach.net/tinection-q-a.html"><img width="100" height="75" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/tinection-q-a-140x100.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tinection主题Q&amp;A专页"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="h5 entry-title">
-                        <a href="https://webapproach.net/tinection-q-a.html">Tinection主题Q&amp;A专页</a>
-                    </h2>
-                    <div class="block-meta text-muted">
-                        <span class="entry-date"><time class="entry-date published" datetime="" title="">November 30, 2014</time></span>
-                    </div>
-                </div>
-            </article>
-                        <article class="block-item">
-                <div class="entry-thumb">
-                    <a href="https://webapproach.net/apsv-tutorial.html"><img width="100" height="75" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2017/02/header-225x150.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="本站支付宝免签辅助软件教程"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="h5 entry-title">
-                        <a href="https://webapproach.net/apsv-tutorial.html">本站支付宝免签辅助软件教程</a>
-                    </h2>
-                    <div class="block-meta text-muted">
-                        <span class="entry-date"><time class="entry-date published" datetime="" title="">February 10, 2017</time></span>
-                    </div>
-                </div>
-            </article>
-                            </div>
-    </aside>
-</div>        </section>
-                <!-- 分类模块与边栏 -->
-    <section id="mod-insideContent" class="main-wrap content-section clearfix">
-        <!-- 分类模块列表 -->
-        <div id="main" class="main cms-main primary col-md-8" role="main">
-        <!-- CMS stickies cached 2017-07-18 14:01:18 -->
-<div id="cms-stickies" class="block5">
-    <section class="block-wrapper clearfix">
-        <div class="sticky-container clearfix">
-            <h2 class="home-heading clearfix">
-                <span class="heading-text">
-                    置顶推荐                </span>
-            </h2>
-            <div class="cms-stickies">
-                                    <div class="col col-1_2">
-                    <article id="post-3500" class="post type-post sticky-post status-publish format-standard">
-                        <div class="entry-thumb hover-scale">
-                            <a href="https://webapproach.net/tint-authorization.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=http://webapproach.net/wp-content/uploads/2017/01/pay-content.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tint主题授权相关说明"></a>
-                        </div>
-                        <div class="entry-detail">
-                            <h3 class="entry-title">
-                                <a href="https://webapproach.net/tint-authorization.html">Tint主题授权相关说明</a>
-                            </h3>
-<!--                            <div class="entry-meta">-->
-<!--                                <span class="datetime text-muted"><i class="tico tico-alarm"></i>--><!--</span>-->
-<!--                                <span class="views-count text-muted"><i class="tico tico-eye"></i>--><!--</span>-->
-<!--                                <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>--><!--</span>-->
-<!--                            </div>-->
-                            <p class="entry-excerpt">目前Tint主题的核心源码采用了PHP动态扩展加密解密，在发布的一定周期内将维持这种模式，包括我个人的服务器均采用了这种源码保护方式，以保障主题域名授权模式的可行性。 选择扩展版本 用户在付费购买【立···</p>
-                        </div>
-                    </article>
-                    </div>
-                                    <div class="col col-1_2">
-                    <article id="post-3495" class="post type-post sticky-post status-publish format-standard">
-                        <div class="entry-thumb hover-scale">
-                            <a href="https://webapproach.net/tinection-migration-to-tint-tips.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/themes/Tint/assets/img/thumb/21.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tinection主题向Tint主题迁移的一些事项"></a>
-                        </div>
-                        <div class="entry-detail">
-                            <h3 class="entry-title">
-                                <a href="https://webapproach.net/tinection-migration-to-tint-tips.html">Tinection主题向Tint主题迁移的一些事项</a>
-                            </h3>
-<!--                            <div class="entry-meta">-->
-<!--                                <span class="datetime text-muted"><i class="tico tico-alarm"></i>--><!--</span>-->
-<!--                                <span class="views-count text-muted"><i class="tico tico-eye"></i>--><!--</span>-->
-<!--                                <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>--><!--</span>-->
-<!--                            </div>-->
-                            <p class="entry-excerpt">Tint主题的初版已经近日发布，作为Tinection主题的重构版，其继承了绝大数老版主题的功能，并抛弃了一些鸡肋或影响性能的要素，同时也添加了一些新的功能和优化。 升级主题授权 对于使用老版主题的正···</p>
-                        </div>
-                    </article>
-                    </div>
-                            </div>
-        </div>
-    </section>
-</div>
-    <!-- CMS posts cached 2017-07-18 14:02:08 -->
-    <div id="cms-cats" class="block6">
-                                                    <section class="block-wrapper clearfix">
-                        <section class="cat-133 cat-col cat-col-full">
-                            <div class="cat-container clearfix">
-                                <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    WP主题                                </span>
-                                    <a href="https://webapproach.net/category/wpthemes">更多<i class="tico tico-angle-right"></i></a>
-                                </h2>
-                                <div class="cms-cat cms-cat-s2">
-                <div class="col col-left">
-                <article id="post-3489" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tint.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2016/12/screenshot-375x250.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tint.html">WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2016-12-25</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>14799 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>134 (评论)</span>
-                        </div>
-                        <p class="entry-excerpt">反馈建议 如果使用过程有任何问题、BUG或者意见建议，均可以通过如下更合理的方式反馈： 老主题Github仓库 - https://github.com/thundernet8/tint-pro/is···</p>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-right">            <article id="post-1524" class="post type-post status-publish format-standard">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/qaengine-wordpress-qa-theme.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/08/qaengine-375x250.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="QAEngine-WordPress问答百科主题" style="max-height: 175px;"></a>
-                </div>
-                <div class="entry-detail">
-                    <h3 class="entry-title">
-                        <a href="https://webapproach.net/qaengine-wordpress-qa-theme.html">QAEngine-WordPress问答百科主题</a>
-                    </h3>
-                    <p class="entry-excerpt">简介 QAEngine WordPress主题，是一个问答百科主题。 特点：自适应设计，点评问答，用户积分设置，前端模块，字体图标，提供演示和说明文档等。 通过使用这套wordpress主题，可以搭建···</p>
-                </div>
-            </article>
-                                                <article id="post-1156" class="post type-post status-publish format-standard">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/smartmag-responsive-wordpress-theme.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=http://webapproach.net/wp-content/uploads/2014/12/SmartMag-.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="SmartMag响应式的WordPress主题模板适合博客，杂志类网站" style="max-height: 175px;"></a>
-                </div>
-                <div class="entry-detail">
-                    <h3 class="entry-title">
-                        <a href="https://webapproach.net/smartmag-responsive-wordpress-theme.html">SmartMag响应式的WordPress主题模板适合博客，杂志类网站</a>
-                    </h3>
-                    <p class="entry-excerpt">SmartMag是一个现代化的，干净的，反应灵敏和视网膜准备适合杂志，报纸，评论网站，或博客（HD）的WordPress主题。 SmartMag不仅擅长前端可用性，管理员后端很容易使用。拖放网页制造商···</p>
-                </div>
-            </article>
-                                                <article id="post-718" class="post type-post status-publish format-standard">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/12-free-wordpress-themes-sharing.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/02/pronto-300x185.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="12款免费wordpress主题下载" style="max-height: 175px;"></a>
-                </div>
-                <div class="entry-detail">
-                    <h3 class="entry-title">
-                        <a href="https://webapproach.net/12-free-wordpress-themes-sharing.html">12款免费wordpress主题下载</a>
-                    </h3>
-                    <p class="entry-excerpt">一个多月没有更新自己的网站了，春节加上毕业论文确实花了不少时间，现在落实工作，提交论文初稿后终于稍稍有些空闲了，因此今天分享一些wordpress的主题，这些主题完全是基于GPL免费共享的。 1.El···</p>
-                </div>
-            </article>
-                                                <article id="post-633" class="post type-post status-publish format-standard">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/wordpress-theme-frontopen.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=http://webapproach.net/attachments/pic/wordpressFrontopen_12D32/frontopen_thumb.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="双栏宽屏wordpress博客主题Frontopen下载" style="max-height: 175px;"></a>
-                </div>
-                <div class="entry-detail">
-                    <h3 class="entry-title">
-                        <a href="https://webapproach.net/wordpress-theme-frontopen.html">双栏宽屏wordpress博客主题Frontopen下载</a>
-                    </h3>
-                    <p class="entry-excerpt">&nbsp; 国人原创宽屏双栏wordpress博客主题下载：Frontopen 是一款非常精美的wordpress主题，风格简洁，以橙色为主打色，功能强大，支持IE6以及各种主流游览器，后台强大，扁···</p>
-                </div>
-            </article>
-                                                <article id="post-537" class="post type-post status-publish format-standard">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/wordpress-theme-sahifa.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2013/10/Sahifi1-300x152.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="WordPress自适应博客主题Sahifa介绍与中英文多版本下载" style="max-height: 175px;"></a>
-                </div>
-                <div class="entry-detail">
-                    <h3 class="entry-title">
-                        <a href="https://webapproach.net/wordpress-theme-sahifa.html">WordPress自适应博客主题Sahifa介绍与中英文多版本下载</a>
-                    </h3>
-                    <p class="entry-excerpt">ahifa 是一个干净整洁的博客，新闻，杂志wordpress主题，首页可在杂志与博客界面风格切换。主题为响应式布局，能自适应PC、平板和手机移动设备，后台编辑器功能扩展，能够添加多种短代码。整体界面可分为全宽、左边栏或右边栏双栏模式，拥有多种页面模板，同时文章形式和内容更丰富，能添加视频、音频、Google地图、文章评分功能等。首页和分类页面可添加幻灯片，多个广告位预留…</p>
-                </div>
-            </article>
-            </div>            </div>                            </div>
-                        </section>
-                    </section>
-                    <!-- AD -->
-<!--                    --><!--                        <div id="loopad" class="container banner">-->
-<!--                            --><!--                        </div>-->
-<!--                    -->                                                                <section class="block-wrapper clearfix">
-                        <section class="cat-427 cat-col cat-col-full">
-                            <div class="cat-container clearfix">
-                                <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    Tinection                                </span>
-                                    <a href="https://webapproach.net/category/tinection">更多<i class="tico tico-angle-right"></i></a>
-                                </h2>
-                                <div class="cms-cat cms-cat-s5">
-                <div class="col col-full clearfix">
-                <article id="post-3649" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tint-feedback.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/themes/Tint/assets/img/thumb/24.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tint主题建议和问题反馈"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tint-feedback.html">Tint主题建议和问题反馈</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2017-06-12</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>782 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>36 (评论)</span>
-                        </div>
-                        <p class="entry-excerpt">由于Tint主题介绍页面图片过多，文章过长，为方便用户和我查看评论反馈，特此开篇。 这里请以评论的方式留下任何以下方面内容： 对Tint主题的建议 Tint主题使用问题反馈 Tint主题售前售后咨询</p>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-small col-1_2 col-s1">
-                <article id="post-1545" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-or-um-captcha-fix-method.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/10/captcha-375x250.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tinection主题以及UM插件验证码关闭方法"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tinection-or-um-captcha-fix-method.html">Tinection主题以及UM插件验证码关闭方法</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2015-10-08</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>6783 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>60 (评论)</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-small col-1_2 col-s2">
-                <article id="post-1320" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-pro-intro-and-suggestion.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/02/tinection-pro-375x250.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tinection主题高级版说明与介绍"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tinection-pro-intro-and-suggestion.html">Tinection主题高级版说明与介绍</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2015-02-12</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>12115 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>77 (评论)</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-small col-1_2 col-s1">
-                <article id="post-1229" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-thumbnail-setting.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/01/tinection-thumbnail-375x250.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tinection主题缩略图设置(Timthumb)"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tinection-thumbnail-setting.html">Tinection主题缩略图设置(Timthumb)</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2015-01-04</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>5718 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>56 (评论)</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-small col-1_2 col-s2">
-                <article id="post-1212" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-suggestion-feedback.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/12/tinection-suggestion-feedback.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tinection主题反馈与建议"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tinection-suggestion-feedback.html">Tinection主题反馈与建议</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2014-12-25</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>6525 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>160 (评论)</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-small col-1_2 col-s1">
-                <article id="post-1134" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/how-to-earn-credits.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/themes/Tint/assets/img/thumb/4.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="网站改版-如何获取本站积分"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/how-to-earn-credits.html">网站改版-如何获取本站积分</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2014-12-01</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>3700 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>127 (评论)</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-                        <div class="col col-small col-1_2 col-s2">
-                <article id="post-1126" class="post type-post status-publish format-standard">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-tutorial.html"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/tinection-tutorial-300x199.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="Tinection主题使用教程(2.27日更新)"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h3 class="entry-title">
-                            <a href="https://webapproach.net/tinection-tutorial.html">Tinection主题使用教程(2.27日更新)</a>
-                        </h3>
-                        <div class="entry-meta">
-                            <span class="datetime text-muted"><i class="tico tico-alarm"></i>2014-11-30</span>
-                            <span class="views-count text-muted"><i class="tico tico-eye"></i>47511 (阅读)</span>
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i>209 (评论)</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            </div>                            </div>
-                        </section>
-                    </section>
-                    <!-- AD -->
-<!--                    --><!--                        <div id="loopad" class="container banner">-->
-<!--                            --><!--                        </div>-->
-<!--                    -->                                                                            <section class="block-wrapper clearfix">
-                                    <section class="cat-7 cat-col cat-col-1_2">
-                        <div class="cat-container clearfix">
-                            <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    WordPress                                </span>
-                                <a href="https://webapproach.net/category/wpbaike">更多<i class="tico tico-angle-right"></i></a>
-                            </h2>
-                            <div class="cms-cat cms-cat-s0">
-    <div class="row-big">
-        <article id="post-1420" class="post type-post status-publish format-standard">
-            <div class="entry-thumb hover-scale">
-                <a href="https://webapproach.net/wordpress-4-x-continuous-posts-id.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/themes/Tint/assets/img/thumb/40.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="WordPress4.x取消自动保存和修订版本，让文章ID连续" style="max-height: 175px;"></a>
-            </div>
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <a href="https://webapproach.net/wordpress-4-x-continuous-posts-id.html">WordPress4.x取消自动保存和修订版本，让文章ID连续</a>
-                </h3>
-                <p class="entry-excerpt">文章ID不连续的原因 WordPress的使用者可以发现，最大的文章ID要远大于文章总量，比如我的博客才130篇左右的文章，而ID已经超过1300了，对于某些强迫症患者，这绝对无法忍受，造成ID不连续···</p>
-            </div>
+          <header><a class="cat" href="program">{{ article.catagory }}<i></i></a>
+            <h2><a href="frontend/article.html" title="">{{ article.title }}</a></h2>
+          </header>
+          <p class="meta">
+            <time class="time"><i class="glyphicon glyphicon-time"></i> {{ article.publish_time }}</time>
+            <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共{{ article.viwes_num }}人围观</span>
+              <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a>
+          </p>
+          <p class="note">{{ article.summary }} ... </p>
         </article>
+      {% endfor %}
+
+
+      <nav class="pagination" style="display: none;">
+        <ul>
+          <li class="prev-page"></li>
+          <li class="active"><span>1</span></li>
+          <li><a href="?page=2">2</a></li>
+          <li class="next-page"><a href="?page=2">下一页</a></li>
+          <li><span>共 2 页</span></li>
+        </ul>
+      </nav>
     </div>
-                <div class="row-small">
-        <article id="post-1365" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/virtual-host-send-mail-via-smtp.html">万网等虚拟主机不能SMTP发信的解决方案</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1294" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wordpress-delete-post-and-thumbnail-attachments.html">WordPress删除文章同时自动删除缩略图及图片附件</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1244" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wordpress-seo-tips-to-add-ten-more-times-of-traffic.html">WordPress SEO宝典：怎么做可以让你博客流量增长10倍</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1234" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wordpress-ajax-login-register.html">为WordPress添加前台AJAX注册登录功能</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1196" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wordpress-test-code-shortcut.html">WordPress中测试代码的简单方法</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1225" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/dbdelta-vs-maybe_create_table.html">WordPress建立数据表函数dbDelta与maybe_create_table对比</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1162" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/timthumb-php-wordpress-thumbnail.html">timthumb.php实现WordPress自动缩略图功能</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1161" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wordpress-memory-cache-to-speed-up.html">wordpress另类加速，把缓存放到内存中</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-    </div>                        </div>
-                    </section>
-                                                                                                <section class="cat-5 cat-col cat-col-1_2">
-                        <div class="cat-container clearfix">
-                            <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    软件代码                                </span>
-                                <a href="https://webapproach.net/category/tech">更多<i class="tico tico-angle-right"></i></a>
-                            </h2>
-                            <div class="cms-cat cms-cat-s0">
-    <div class="row-big">
-        <article id="post-3586" class="post type-post status-publish format-standard">
-            <div class="entry-thumb hover-scale">
-                <a href="https://webapproach.net/apsv-tutorial.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2017/02/header-375x225.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="本站支付宝免签辅助软件教程" style="max-height: 175px;"></a>
-            </div>
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <a href="https://webapproach.net/apsv-tutorial.html">本站支付宝免签辅助软件教程</a>
-                </h3>
-                <p class="entry-excerpt">本站使用的为配合Tint主题而开发的支付宝免签辅助软件AlipaySupervisor已上架销售，请查看文末商品链接或直接访问商店查找。部分介绍请查看商品介绍内容。该软件已搭配本站Tint主题使用，目···</p>
-            </div>
-        </article>
-    </div>
-                <div class="row-small">
-        <article id="post-3497" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/glibc2-14-installation.html">Linux各发行版安装Tint主题解密php扩展依赖项之glibc组件</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1536" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/nginx-use-pagespeed-speed-up-website.html">nginx启用pagespeed加速站点访问，阿里云已测试可用</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1249" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/goagent-chrome-switchyomega-proxy-2015-latest.html">Goagent+Chrome+SwitchyOmega使用教程最新版(2015.1)</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-977" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/zend-guard-6-0-download-and-crack.html">PHP加密利器Zend Guard 6.0下载安装与破解激活</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-917" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/goagent20140607.html">Goagent 2014最新版下载与使用教程（2014.6）</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-874" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/matlab2014a-download-and-crack.html">全新Matlab2014a下载与破解激活教程</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-803" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/github-tortoisegit-tutorial.html">Github+TortoiseGit实现项目版本优化控制</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-800" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/static-webtool-nico.html">静态网站生成器-Nico</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-    </div>                        </div>
-                    </section>
-                                </section>
-                                                                                            <section class="block-wrapper clearfix">
-                                    <section class="cat-315 cat-col cat-col-1_2">
-                        <div class="cat-container clearfix">
-                            <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    影音资源                                </span>
-                                <a href="https://webapproach.net/category/video">更多<i class="tico tico-angle-right"></i></a>
-                            </h2>
-                            <div class="cms-cat cms-cat-s0">
-    <div class="row-big">
-        <article id="post-1482" class="post type-post status-publish format-standard">
-            <div class="entry-thumb hover-scale">
-                <a href="https://webapproach.net/dao-mu-bi-ji.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=http://webapproach.net/wp-content/uploads/2015/07/dao-mu-bi-ji_thumb.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="盗墓笔记电视剧全集12集下载" style="max-height: 175px;"></a>
-            </div>
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <a href="https://webapproach.net/dao-mu-bi-ji.html">盗墓笔记电视剧全集12集下载</a>
-                </h3>
-                <p class="entry-excerpt">基本信息 ◎译　　名　盗墓笔记 第一季/考古笔记 ◎片　　名　盗墓笔记 ◎年　　代　2015 ◎国　　家　中国大陆 ◎类　　别　惊悚/恐怖 ◎语　　言　汉语普通话 ◎上映日期　2015-06-12(中···</p>
-            </div>
-        </article>
-    </div>
-                <div class="row-small">
-        <article id="post-1390" class="post type-post status-publish format-video">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/furious-seven-film-thunder-bt-download.html">速度与激情7高清电影下载[迅雷下载 BT种子下载]</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1340" class="post type-post status-publish format-video">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/fifty-shades-of-grey-full-edtion-download.html">五十度灰/Fifty Shades of Grey完整未删减版[迅雷下载][高清]</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1331" class="post type-post status-publish format-video">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/house-of-cards-season3-xunlei-download.html">纸牌屋/House of Cards 第三季[全13集打包][迅雷下载][百度网盘下载][英语中字]</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1218" class="post type-post status-publish format-video">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/the-interview-bt-download.html">刺杀金正恩(The Interview)1080P高清MP4迅雷下载</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1159" class="post type-post status-publish format-video">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/shoot-my-best.html">佳能另类幽默广告短片《Shoot My Best》</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-675" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/nikita-season-4-download.html">尼基塔第四季(终结季)全集高清下载-持续更新</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-666" class="post type-post status-publish format-video">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/angie-vazquez-rolling-in-the-deep.html">墨西哥10岁超美小萝莉Angie Vazquez激情翻唱Rolling In The Deep</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-608" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/norwegian-photographer-seven-days-record-beautiful-nature.html">一位挪威攝影師七天不眠不休之作,让你感动到落泪的自然奇景</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-    </div>                        </div>
-                    </section>
-                                                                                                <section class="cat-494 cat-col cat-col-1_2">
-                        <div class="cat-container clearfix">
-                            <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    WordPress插件                                </span>
-                                <a href="https://webapproach.net/category/wordpress-plugins">更多<i class="tico tico-angle-right"></i></a>
-                            </h2>
-                            <div class="cms-cat cms-cat-s0">
-    <div class="row-big">
-        <article id="post-1436" class="post type-post status-publish format-standard">
-            <div class="entry-thumb hover-scale">
-                <a href="https://webapproach.net/wp-baidu-submit-plugin.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/06/be0c5a4ec912fd1233856da918f22c57-375x250.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="百度自动链接提交插件：WP BaiDu Submit" style="max-height: 175px;"></a>
-            </div>
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <a href="https://webapproach.net/wp-baidu-submit-plugin.html">百度自动链接提交插件：WP BaiDu Submit</a>
-                </h3>
-                <p class="entry-excerpt">插件介绍 WP BaiDu Submit能帮助获得百度站长Sitemap权限的用户自动提交最新文章，加快收录速度，大幅度提升收录量。 这款插件并非百度官方结构化数据插件，这款插件是针对sitemap实···</p>
-            </div>
-        </article>
-    </div>
-                <div class="row-small">
-        <article id="post-1394" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wordpress-plugin-ucenter-and-market.html">WordPress插件-Ucenter&#038;Market用户中心与商城插件</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-        <div class="row-small">
-        <article id="post-1373" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/wp-baidusubmit-plugin.html">百度站长工具WordPress结构化数据提交插件使用与问题解决</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-    </div>                        </div>
-                    </section>
-                                </section>
-                                                                                            <section class="block-wrapper clearfix">
-                                    <section class="cat-485 cat-col cat-col-1_2">
-                        <div class="cat-container clearfix">
-                            <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    PSD/HTML素材                                </span>
-                                <a href="https://webapproach.net/category/psd-html-template">更多<i class="tico tico-angle-right"></i></a>
-                            </h2>
-                            <div class="cms-cat cms-cat-s0">
-    <div class="row-big">
-        <article id="post-1357" class="post type-post status-publish format-standard">
-            <div class="entry-thumb hover-scale">
-                <a href="https://webapproach.net/thirty-plus-apple-mockup-psd-template.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/03/applemockup7-375x250.jpg&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="30+Iphone5/5S Iphone6/6+ Macbook苹果系列硬件模型PSD素材" style="max-height: 175px;"></a>
-            </div>
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <a href="https://webapproach.net/thirty-plus-apple-mockup-psd-template.html">30+Iphone5/5S Iphone6/6+ Macbook苹果系列硬件模型PSD素材</a>
-                </h3>
-                <p class="entry-excerpt">显而易见，目前很多响应式网站甚至APP都使用苹果系列硬件模型来显示它们的网站样式，包括多个终端。同样UI设计师也喜好利用苹果硬件模型更好的展示设计成果，极具美感的演示将有效的提高产品的销售。因此本文给···</p>
-            </div>
-        </article>
-    </div>
-            </div>                        </div>
-                    </section>
-                                                                                                <section class="cat-486 cat-col cat-col-1_2">
-                        <div class="cat-container clearfix">
-                            <h2 class="home-heading clearfix">
-                                <span class="heading-text">
-                                    前端源码                                </span>
-                                <a href="https://webapproach.net/category/code">更多<i class="tico tico-angle-right"></i></a>
-                            </h2>
-                            <div class="cms-cat cms-cat-s0">
-    <div class="row-big">
-        <article id="post-1477" class="post type-post status-publish format-standard">
-            <div class="entry-thumb hover-scale">
-                <a href="https://webapproach.net/css3-loading-effect.html"><img width="250" height="170" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=http://webapproach.net/wp-content/uploads/2015/07/css3-loading.png&q=90&w=375&h=250&zc=1" class="thumb-medium wp-post-image lazy" alt="纯CSS3动态加载中效果" style="max-height: 175px;"></a>
-            </div>
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <a href="https://webapproach.net/css3-loading-effect.html">纯CSS3动态加载中效果</a>
-                </h3>
-                <p class="entry-excerpt">纯CSS3制作的加载中效果，可以用于页面加载动画等处，代码效果如下： 代码分为占位容器代码与样式代码，分别如下： 容器代码： 样式代码： 加载中</p>
-            </div>
-        </article>
-    </div>
-                <div class="row-small">
-        <article id="post-1423" class="post type-post status-publish format-standard">
-            <div class="entry-detail">
-                <h3 class="entry-title">
-                    <i class=""></i>
-                    <a href="https://webapproach.net/js-circles-canvas-background.html">JS实现多彩圆点气泡动态背景</a>
-                </h3>
-            </div>
-        </article>
-    </div>
-    </div>                        </div>
-                    </section>
-                                </section>
-                                                        </div>
-</div>        <!-- 边栏 -->
-        <!-- SideBar Begin -->
-<aside class="sidebar secondary col-md-4" id="sidebar">
-        <!-- Hot reviewed posts widget cached 2017-07-18 14:02:08 -->        <div id="hotreviewposts-2" class="widget widget_hot-posts widget_hotreviewed-posts">        <h3 class="widget-title"><span>热评文章</span></h3>        <div class="widget-content">
-                            <article id="post-1093" class="post type-post status-publish hotreview-post">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-theme-download.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/screenshot1-140x100.png&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tinection主题版本发布与下载专页(v1.1.8)"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h2 class="entry-title"><a href="https://webapproach.net/tinection-theme-download.html" rel="bookmark">Tinection主题版本发布与下载专页(v1.1.8)</a></h2>
-                        <div class="entry-meta entry-meta-1">
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i><a href="https://webapproach.net/tinection-theme-download.html#respond">452</a></span>
-                            <span class="entry-date text-muted"><time class="entry-date" datetime="2014-11-26T22:43:42+08:00" title="2014-11-26T22:43:42+08:00"><i class="tico tico-alarm"></i>2014-11-26 22:43</time></span>
-                        </div>
-                    </div>
-                </article>
-                            <article id="post-1126" class="post type-post status-publish hotreview-post">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-tutorial.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/tinection-tutorial-140x100.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tinection主题使用教程(2.27日更新)"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h2 class="entry-title"><a href="https://webapproach.net/tinection-tutorial.html" rel="bookmark">Tinection主题使用教程(2.27日更新)</a></h2>
-                        <div class="entry-meta entry-meta-1">
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i><a href="https://webapproach.net/tinection-tutorial.html#respond">209</a></span>
-                            <span class="entry-date text-muted"><time class="entry-date" datetime="2014-11-30T21:43:59+08:00" title="2014-11-30T21:43:59+08:00"><i class="tico tico-alarm"></i>2014-11-30 21:43</time></span>
-                        </div>
-                    </div>
-                </article>
-                            <article id="post-1117" class="post type-post status-publish hotreview-post">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-q-a.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/tinection-q-a-140x100.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tinection主题Q&amp;A专页"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h2 class="entry-title"><a href="https://webapproach.net/tinection-q-a.html" rel="bookmark">Tinection主题Q&amp;A专页</a></h2>
-                        <div class="entry-meta entry-meta-1">
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i><a href="https://webapproach.net/tinection-q-a.html#respond">166</a></span>
-                            <span class="entry-date text-muted"><time class="entry-date" datetime="2014-11-30T21:03:03+08:00" title="2014-11-30T21:03:03+08:00"><i class="tico tico-alarm"></i>2014-11-30 21:03</time></span>
-                        </div>
-                    </div>
-                </article>
-                            <article id="post-1212" class="post type-post status-publish hotreview-post">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-suggestion-feedback.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/12/tinection-suggestion-feedback.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tinection主题反馈与建议"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h2 class="entry-title"><a href="https://webapproach.net/tinection-suggestion-feedback.html" rel="bookmark">Tinection主题反馈与建议</a></h2>
-                        <div class="entry-meta entry-meta-1">
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i><a href="https://webapproach.net/tinection-suggestion-feedback.html#respond">160</a></span>
-                            <span class="entry-date text-muted"><time class="entry-date" datetime="2014-12-25T22:29:14+08:00" title="2014-12-25T22:29:14+08:00"><i class="tico tico-alarm"></i>2014-12-25 22:29</time></span>
-                        </div>
-                    </div>
-                </article>
-                            <article id="post-1083" class="post type-post status-publish hotreview-post">
-                    <div class="entry-thumb hover-scale">
-                        <a href="https://webapproach.net/tinection-distribution.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/tinection-140x100.png&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="WordPress多功能响应式主题Tinection发布"></a>
-                    </div>
-                    <div class="entry-detail">
-                        <h2 class="entry-title"><a href="https://webapproach.net/tinection-distribution.html" rel="bookmark">WordPress多功能响应式主题Tinection发布</a></h2>
-                        <div class="entry-meta entry-meta-1">
-                            <span class="comments-count text-muted"><i class="tico tico-comments-o"></i><a href="https://webapproach.net/tinection-distribution.html#respond">150</a></span>
-                            <span class="entry-date text-muted"><time class="entry-date" datetime="2014-11-25T22:37:02+08:00" title="2014-11-25T22:37:02+08:00"><i class="tico tico-alarm"></i>2014-11-25 22:37</time></span>
-                        </div>
-                    </div>
-                </article>
-                    </div>
-        </div>        <!-- Widget cached 2017-07-18 14:01:19 --><div id="tagcloud-2" class="widget widget_tag-cloud"><h3 class="widget-title"><span>标签云</span></h3><div class="widget-content"><aside class="tags"><a href='https://webapproach.net/tag/%e7%bc%a9%e7%95%a5%e5%9b%be' class='tag-link-159 tag-link-position-1' title='6个话题' style='font-size: 12px;'>缩略图</a>
-<a href='https://webapproach.net/tag/%e7%a0%b4%e8%a7%a3' class='tag-link-27 tag-link-position-2' title='9个话题' style='font-size: 12px;'>破解</a>
-<a href='https://webapproach.net/tag/%e5%bd%b1%e9%9f%b3' class='tag-link-482 tag-link-position-3' title='4个话题' style='font-size: 12px;'>影音</a>
-<a href='https://webapproach.net/tag/%e5%9f%9f%e5%90%8d' class='tag-link-64 tag-link-position-4' title='3个话题' style='font-size: 12px;'>域名</a>
-<a href='https://webapproach.net/tag/%e5%8f%8c%e6%a0%8f' class='tag-link-155 tag-link-position-5' title='5个话题' style='font-size: 12px;'>双栏</a>
-<a href='https://webapproach.net/tag/%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80' class='tag-link-245 tag-link-position-6' title='4个话题' style='font-size: 12px;'>下载地址</a>
-<a href='https://webapproach.net/tag/%e4%b8%8b%e8%bd%bd' class='tag-link-81 tag-link-position-7' title='8个话题' style='font-size: 12px;'>下载</a>
-<a href='https://webapproach.net/tag/wordpress%e6%8f%92%e4%bb%b6' class='tag-link-267 tag-link-position-8' title='5个话题' style='font-size: 12px;'>wordpress插件</a>
-<a href='https://webapproach.net/tag/wordpress%e4%b8%bb%e9%a2%98' class='tag-link-30 tag-link-position-9' title='20个话题' style='font-size: 12px;'>wordpress主题</a>
-<a href='https://webapproach.net/tag/wordpress' class='tag-link-21 tag-link-position-10' title='61个话题' style='font-size: 12px;'>wordpress</a>
-<a href='https://webapproach.net/tag/win8-1' class='tag-link-142 tag-link-position-11' title='4个话题' style='font-size: 12px;'>win8.1</a>
-<a href='https://webapproach.net/tag/win8' class='tag-link-23 tag-link-position-12' title='4个话题' style='font-size: 12px;'>win8</a>
-<a href='https://webapproach.net/tag/tint' class='tag-link-529 tag-link-position-13' title='5个话题' style='font-size: 12px;'>Tint</a>
-<a href='https://webapproach.net/tag/tinection%e4%b8%bb%e9%a2%98' class='tag-link-438 tag-link-position-14' title='4个话题' style='font-size: 12px;'>Tinection主题</a>
-<a href='https://webapproach.net/tag/tinection' class='tag-link-521 tag-link-position-15' title='10个话题' style='font-size: 12px;'>Tinection</a>
-<a href='https://webapproach.net/tag/seo' class='tag-link-110 tag-link-position-16' title='5个话题' style='font-size: 12px;'>SEO</a>
-<a href='https://webapproach.net/tag/namecheap' class='tag-link-63 tag-link-position-17' title='4个话题' style='font-size: 12px;'>namecheap</a>
-<a href='https://webapproach.net/tag/js' class='tag-link-51 tag-link-position-18' title='3个话题' style='font-size: 12px;'>JS</a>
-<a href='https://webapproach.net/tag/jquery' class='tag-link-107 tag-link-position-19' title='3个话题' style='font-size: 12px;'>jquery</a>
-<a href='https://webapproach.net/tag/css' class='tag-link-10 tag-link-position-20' title='7个话题' style='font-size: 12px;'>CSS</a></aside></div></div><div id="awardcouponwidget-2" class="widget widget_award">        <div class="widget-content">
-            <style>
-                .award-des {
-                    text-align: center;
-                    font-style: italic;
-                    margin-top: 20px;
-                }
-                .award-coupon {
-                    text-align: center;
-                    color: #eee;
-                    font-size: 10px;
-                    margin: 40px auto;
-                    font-style: italic;
-                }
-                .coupon-des {
-                    text-align: center;
-                    text-decoration: underline;
-                    margin-bottom: 25px;
-                }
-            </style>
-            <div class="row">
-                <p class="award-des">你努力的刮开墙壁，发现这里有一行小字</p>
-                                                    <p class="award-coupon">谢谢来访</p>
-                    <p class="coupon-des">这里什么都没有, 不要气馁，明天再来</p>
-                            </div>
-        </div>
-        </div>        <div id="floatwidget-2" class="widget widget_float-sidebar">        <div id="donatewidget-2" class="widget widget_donate"><h3 class=widget-title><span>赞助站长</span></h3>        <div class="widget-content">
-            <div class="row">
-                                    <div class="qr-col col-md-6 col-sm-6 col-xs-6">
-                    <i class="qr-type-icon qr-type-wechat tico tico-wechat"></i>
-                    <img src="https://webapproach.net/wp-content/themes/Tint/assets/img/qr/weixin_pay.png">
-                </div>
-                                        <div class="qr-col col-md-6 col-sm-6 col-xs-6">
-                    <i class="qr-type-icon qr-type-alipay"></i>
-                    <img src="https://webapproach.net/wp-content/themes/Tint/assets/img/qr/alipay_pay.png">
-                </div>
-                        </div>
-        </div>
-        </div>                </div>        <!-- Hothit posts widget cached 2017-07-18 14:02:08 -->        <div id="hothitposts-2" class="widget widget_hot-posts widget_hothit-posts">        <h3 class="widget-title"><span>热门点击</span></h3>        <div class="widget-content">
-                    <article id="post-1249" class="post type-post status-publish hothit-post">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/goagent-chrome-switchyomega-proxy-2015-latest.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/01/goagent-225x150.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Goagent+Chrome+SwitchyOmega使用教程最新版(2015.1)"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="entry-title"><a href="https://webapproach.net/goagent-chrome-switchyomega-proxy-2015-latest.html" rel="bookmark">Goagent+Chrome+SwitchyOmega使用教程最新版(2015.1)</a></h2>
-                    <div class="entry-meta entry-meta-1">
-                        <span class="view-count text-muted"><i class="tico tico-eye"></i>213003</a></span>
-                        <span class="entry-date text-muted"><time class="entry-date" datetime="2015-01-10T17:25:27+08:00" title="2015-01-10T17:25:27+08:00"><i class="tico tico-alarm"></i>2015-01-10 17:25</time></span>
-                    </div>
-                </div>
-            </article>
-                    <article id="post-441" class="post type-post status-publish hothit-post">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/sas-9-3-download-crack.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2013/08/sas_thumb-140x100.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="SAS 9.3 统计分析软件 32/64位多国语言版下载及序列号破解"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="entry-title"><a href="https://webapproach.net/sas-9-3-download-crack.html" rel="bookmark">SAS 9.3 统计分析软件 32/64位多国语言版下载及序列号破解</a></h2>
-                    <div class="entry-meta entry-meta-1">
-                        <span class="view-count text-muted"><i class="tico tico-eye"></i>161784</a></span>
-                        <span class="entry-date text-muted"><time class="entry-date" datetime="2013-08-26T22:45:11+08:00" title="2013-08-26T22:45:11+08:00"><i class="tico tico-alarm"></i>2013-08-26 22:45</time></span>
-                    </div>
-                </div>
-            </article>
-                    <article id="post-917" class="post type-post status-publish hothit-post">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/goagent20140607.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=http://webapproach.net/wp-content/uploads/2014/06/goagent-tutorial1_thumb.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Goagent 2014最新版下载与使用教程（2014.6）"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="entry-title"><a href="https://webapproach.net/goagent20140607.html" rel="bookmark">Goagent 2014最新版下载与使用教程（2014.6）</a></h2>
-                    <div class="entry-meta entry-meta-1">
-                        <span class="view-count text-muted"><i class="tico tico-eye"></i>75373</a></span>
-                        <span class="entry-date text-muted"><time class="entry-date" datetime="2014-06-12T09:22:08+08:00" title="2014-06-12T09:22:08+08:00"><i class="tico tico-alarm"></i>2014-06-12 09:22</time></span>
-                    </div>
-                </div>
-            </article>
-                    <article id="post-1340" class="post type-post status-publish hothit-post">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/fifty-shades-of-grey-full-edtion-download.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2015/03/Fifty-Shades-of-Grey-225x150.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="五十度灰/Fifty Shades of Grey完整未删减版[迅雷下载][高清]"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="entry-title"><a href="https://webapproach.net/fifty-shades-of-grey-full-edtion-download.html" rel="bookmark">五十度灰/Fifty Shades of Grey完整未删减版[迅雷下载][高清]</a></h2>
-                    <div class="entry-meta entry-meta-1">
-                        <span class="view-count text-muted"><i class="tico tico-eye"></i>53554</a></span>
-                        <span class="entry-date text-muted"><time class="entry-date" datetime="2015-03-08T21:22:36+08:00" title="2015-03-08T21:22:36+08:00"><i class="tico tico-alarm"></i>2015-03-08 21:22</time></span>
-                    </div>
-                </div>
-            </article>
-                    <article id="post-1126" class="post type-post status-publish hothit-post">
-                <div class="entry-thumb hover-scale">
-                    <a href="https://webapproach.net/tinection-tutorial.html"><img width="200" height="136" src="https://webapproach.net/wp-content/themes/Tint/assets/img/image-pending.gif" data-original="https://webapproach.net/wp-content/themes/Tint/core/library/timthumb/Timthumb.php?src=https://webapproach.net/wp-content/uploads/2014/11/tinection-tutorial-140x100.jpg&q=90&w=200&h=150&zc=1" class="thumb-small wp-post-image lazy" alt="Tinection主题使用教程(2.27日更新)"></a>
-                </div>
-                <div class="entry-detail">
-                    <h2 class="entry-title"><a href="https://webapproach.net/tinection-tutorial.html" rel="bookmark">Tinection主题使用教程(2.27日更新)</a></h2>
-                    <div class="entry-meta entry-meta-1">
-                        <span class="view-count text-muted"><i class="tico tico-eye"></i>47511</a></span>
-                        <span class="entry-date text-muted"><time class="entry-date" datetime="2014-11-30T21:43:59+08:00" title="2014-11-30T21:43:59+08:00"><i class="tico tico-alarm"></i>2014-11-30 21:43</time></span>
-                    </div>
-                </div>
-            </article>
-                </div>
-        </div>        <!-- Recent comments widget cached 2017-07-18 14:02:08 -->        <div id="recentcomments-2" class="widget widget_recent-comments">        <h3 class="widget-title"><span>最新评论</span></h3>        <div class="widget-content">
-                            <li class="comment">
-                    <div class="comment-title" title="刚刚">
-                        <span class="comment-author"><img class="avatar lazy" src="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/avatar.png" data-original="https://tva1.sinaimg.cn/crop.0.0.180.180.180/5cd53115jw1e8qgp5bmzyj2050050aa8.jpg">Touchumind</span>评论于 <a href="https://webapproach.net/tint-authorization.html">Tint主题授权相关说明</a>
-                    </div>
-                    <div class="comment-content"><p>联系我QQ， 813920477</p>
-</div>
-                </li>
-                            <li class="comment">
-                    <div class="comment-title" title="20小时">
-                        <span class="comment-author"><img class="avatar lazy" src="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/avatar.png" data-original="https://q.qlogo.cn/qqapp/101372440/2F5310C08080EAC5719D0DB3051D8A91/100">337393349@qq.com</span>评论于 <a href="https://webapproach.net/tint-authorization.html">Tint主题授权相关说明</a>
-                    </div>
-                    <div class="comment-content"><p>我要授权第二个域名，要怎么授权？</p>
-</div>
-                </li>
-                            <li class="comment">
-                    <div class="comment-title" title="1天前">
-                        <span class="comment-author"><img class="avatar lazy" src="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/avatar.png" data-original="https://webapproach.net/wp-content/uploads/avatars/5396.jpg">aimerforreimu</span>评论于 <a href="https://webapproach.net/tint-feedback.html">Tint主题建议和问题反馈</a>
-                    </div>
-                    <div class="comment-content"><p>貌似广告只能在电脑端显示，文章顶部的广告位是这样的……</p>
-</div>
-                </li>
-                            <li class="comment">
-                    <div class="comment-title" title="3天前">
-                        <span class="comment-author"><img class="avatar lazy" src="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/avatar.png" data-original="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/letters/B/small.png">babby</span>评论于 <a href="https://webapproach.net/tint.html">WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]</a>
-                    </div>
-                    <div class="comment-content"><p>是我眼拙，看错了安装的是memcached 刚刚已经解决好，希望博主能够添加主页等高块/瀑布流布局</p>
-</div>
-                </li>
-                            <li class="comment">
-                    <div class="comment-title" title="3天前">
-                        <span class="comment-author"><img class="avatar lazy" src="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/avatar.png" data-original="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/letters/B/small.png">babby</span>评论于 <a href="https://webapproach.net/tint.html">WordPress新主题Tint(Tinection重构版)发布[更新至2.1.0]</a>
-                    </div>
-                    <div class="comment-content"><p>手残点开了结果就使用不了了“memcache 复制插件错误 你选择了memcache对象缓存, 但是没有安装Memcache”用的lnmp开启memcache也不行了。</p>
-</div>
-                </li>
-                            <li class="comment">
-                    <div class="comment-title" title="1周前 (07-09)">
-                        <span class="comment-author"><img class="avatar lazy" src="https://webapproach.net/wp-content/themes/Tint/assets/img/avatar/avatar.png" data-original="https://q.qlogo.cn/qqapp/101372440/9D46E9EAB3C2961B855161132CBDF6F8/100">xiaobing</span>评论于 <a href="https://webapproach.net/apsv-tutorial.html">本站支付宝免签辅助软件教程</a>
-                    </div>
-                    <div class="comment-content"><p>能不能扔个链接</p>
-</div>
-                </li>
-                    </div>
-        </div>            <div class="widget float-widget-mirror">
-    </div>
-</aside>    </section>
-        </div>
+  </div>
+
+{% include 'frontend/right-base.html' %}
+</section>
+{% endblock %}
 <footer class="footer">
-    <!--div class="footer-before"><img src="https://webapproach.net/wp-content/themes/Tint/assets/img/colorful-line.png" ></div-->
-    <div class="footer-wrap">
-        <!-- 页脚小工具区 -->
-        <div class="footer-widgets">
-
-        </div>
-        <!-- 页脚菜单/版权信息 IDC No. -->
-        <div class="footer-nav">
-            <div class="footer-nav-links">
-                <!-- Nav cached 2017-07-18 14:02:16 --><ul id="menu-footer" class="footer-menu"><li id="menu-item-939" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-939"><a href="https://webapproach.net/links">友情链接</a></li>
-<li id="menu-item-940" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-940"><a href="https://webapproach.net/archives">文章归档</a></li>
-<li id="menu-item-1005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"><a href="https://webapproach.net/guestbook">联系留言</a></li>
-<li id="menu-item-3486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3486"><a href="https://webapproach.net/site/privacy-policies-and-terms">免责声明</a></li>
-<li id="menu-item-941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-941"><a href="https://webapproach.net/about-me">关于</a></li>
-</ul><!-- Nav cache end -->            </div>
-            <div class="footer-shares">
-                                <a class="fts-facebook" href="https://www.facebook.com/xueqian.wu" target="_blank">
-                    <span class="tico tico-facebook">
-                      <span class="se-icon tico tico-facebook"></span>
-                    </span>
-                </a>
-                                                    <a class="fts-twitter" href="https://www.twitter.com/thundernet8" target="_blank">
-                    <span class="tico tico-twitter">
-                      <span class="se-icon tico tico-twitter"></span>
-                    </span>
-                    </a>
-                                                    <a class="fts-qq" href="http://wpa.qq.com/msgrd?v=3&uin=813920477&site=qq&menu=yes" target="_blank">
-                    <span class="tico tico-qq">
-                      <span class="se-icon tico tico-qq"></span>
-                    </span>
-                    </a>
-                                                    <a class="fts-qq" href="http://shang.qq.com/wpa/qunwpa?idkey=34f18a1aa8f368cfe67ee4c8bc3211efc0bb2a4e58c24024a69da5beeb47ee00" target="_blank">
-                    <span class="tico tico-users2">
-                      <span class="se-icon tico tico-users2"></span>
-                    </span>
-                    </a>
-                                                    <a class="fts-twitter" href="http://www.weibo.com/touchumind" target="_blank">
-                    <span class="tico tico-weibo">
-                      <span class="se-icon tico tico-weibo"></span>
-                    </span>
-                    </a>
-                                                                    <a class="fts-email" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=cBMYGR4RAxhCQEFAMAYZAF4BAV4THx0" target="_blank">
-                    <span class="tico tico-envelope">
-                      <span class="se-icon tico tico-envelope"></span>
-                    </span>
-                    </a>
-                                <a class="fts-rss" href="https://webapproach.net/feed" target="_blank">
-                    <span class="tico tico-rss">
-                      <span class="se-icon tico tico-rss"></span>
-                    </span>
-                </a>
-
-            </div>
-            <div class="footer-copy">
-                &copy;&nbsp;2013-2017&nbsp;&nbsp; WebApproach All Right Reserved                 ·&nbsp;<a href="http://www.miitbeian.gov.cn/" rel="link" target="_blank">沪ICP备14045138号-2</a>                ·&nbsp;<b style="color: #ff4425;">♥</b>&nbsp;<a href="https://webapproach.net/tint.html" title="Tint" rel="link" target="_blank">Tint</a> & Design by <a href="https://webapproach.net" title="WebApproach" rel="link" target="_blank">WebApproach.</a>                 ·&nbsp;3次查询, 消耗0.370s            </div>
-        </div>
-    </div>
+  <div class="container">
+    <p>&copy; 2016 <a href="">ylsat.com</a> &nbsp; <a href="#" target="_blank" rel="nofollow">豫ICP备20151109-1</a> &nbsp; &nbsp; <a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+  </div>
+  <div id="gotop"><a class="gotop"></a></div>
 </footer>
-<!-- 返回顶部等固定按钮 -->
-<div id="fix-controls">
-    <a class="scroll-to scroll-top" href="javascript:" data-tooltip="返回顶部"><i class="tico tico-arrow-up2"></i></a>
-    <a class="scroll-to scroll-bottom" href="javascript:" data-tooltip="返回底部"><i class="tico tico-arrow-down2"></i></a>
-</div><!-- 搜索模态框 -->
-<div id="globalSearch" class="js-search search-form search-form-modal fadeZoomIn" role="dialog" aria-hidden="true">
-    <form method="get" action="https://webapproach.net" role="search">
-        <div class="search-form-inner">
-            <div class="search-form-box">
-                <input class="form-search" type="text" name="s" placeholder="键入关键词">
-            </div>
-        </div>
-    </form>
-</div><!-- 私信模态框 -->
-<div id="pmBox" class="js-pm pm-form pm-form-modal fadeScale" role="dialog" aria-hidden="true">
-    <div class="pm-header">
-        <h2>发送私信</h2>
+<!--微信二维码模态框-->
+<div class="modal fade user-select" id="WeChat" tabindex="-1" role="dialog" aria-labelledby="WeChatModalLabel">
+  <div class="modal-dialog" role="document" style="margin-top:120px;max-width:280px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="WeChatModalLabel" style="cursor:default;">微信扫一扫</h4>
+      </div>
+      <div class="modal-body" style="text-align:center"> <img src="/static/images/weixin.jpg" alt="" style="cursor:pointer"/> </div>
     </div>
-    <div class="pm-content">
-        <div class="pm-inner">
-            <div class="pm-info">
-                <label class="pm-info_label caption-muted">发给:</label>
-                <span class="pm-info_receiver"></span>
-                <input class="pm_nonce" type="hidden" value="1f8e6e6357">
-            </div>
-            <textarea class="pm-text mt10" placeholder="消息内容..." tabindex="1" required></textarea>
-        </div>
+  </div>
+</div>
+<!--该功能正在日以继夜的开发中-->
+<div class="modal fade user-select" id="areDeveloping" tabindex="-1" role="dialog" aria-labelledby="areDevelopingModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="areDevelopingModalLabel" style="cursor:default;">该功能正在日以继夜的开发中…</h4>
+      </div>
+      <div class="modal-body"> <img src="/static/images/baoman/baoman_01.gif" alt="深思熟虑" />
+        <p style="padding:15px 15px 15px 100px; position:absolute; top:15px; cursor:default;">很抱歉，程序猿正在日以继夜的开发此功能，本程序将会在以后的版本中持续完善！</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">朕已阅</button>
+      </div>
     </div>
-    <div class="pm-btns mt20">
-        <button class="cancel btn btn-default" tabindex="3">取消</button>
-        <button class="confirm btn btn-info ml10" data-box-type="modal" tabindex="2">发送</button>
-        <a class="cancel close-btn"><i class="tico tico-close"></i></a>
+  </div>
+</div>
+<!--登录注册模态框-->
+<div class="modal fade user-select" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="/Admin/Index/login" method="post">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="loginModalLabel">登录</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="loginModalUserNmae">用户名</label>
+            <input type="text" class="form-control" id="loginModalUserNmae" placeholder="请输入用户名" autofocus maxlength="15" autocomplete="off" required>
+          </div>
+          <div class="form-group">
+            <label for="loginModalUserPwd">密码</label>
+            <input type="password" class="form-control" id="loginModalUserPwd" placeholder="请输入密码" maxlength="18" autocomplete="off" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">登录</button>
+        </div>
+      </form>
     </div>
-</div><!-- 登录弹窗 -->
-<form class="form-signin modal fadeScale" id="modalSignBox">
-    <h2>登录</h2>
-    <div class="local-signin">
-        <!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
-        <input style="display:none" type="text" name="fakeusernameremembered"/>
-        <input style="display:none" type="password" name="fakepasswordremembered"/>
-        <div class="form-group input-container clearfix">
-            <input autocomplete="off" name="user_login" type="text" class="form-control input text-input" id="user_login-input" title="" required="required" placeholder="邮箱或用户名">
-            <span class="tip"></span>
-        </div>
-        <div class="form-group input-container clearfix">
-            <input autocomplete="new-password" name="password" type="password" class="form-control input password-input" id="password-input" title="" required="required" placeholder="密码">
-            <span class="tip"></span>
-        </div>
-        <input name="nonce" type="hidden" value="132e5fb1a1">
-        <button class="btn btn-info btn-block submit" type="submit">提交</button>
-        <div class="text-center mt20 login-help">
-            <a href="https://webapproach.net/m/signup?redirect_to=https%3A%2F%2Fwebapproach.net" id="go-register" class="mr20 register-link" rel="link">现在注册</a>
-            <span class="dot-separator" role="separator"></span>
-            <a href="https://webapproach.net/m/findpass" id="go-findpass" class="ml20 findpass-link" rel="link">忘记密码?</a>
-        </div>
-    </div>
-    <!-- Open Login -->
-                <div class="open-login clearfix">
-            <p class="mb20 hidden-xs">使用社交账户登录</p>
-            <div class="social-items">
-                            <a href="https://webapproach.net/oauth/weibo?redirect_to=https%3A%2F%2Fwebapproach.net" class="btn btn-sn-weibo">
-                    <span class="tico tico-weibo"></span>
-                </a>
-                                        <a href="https://webapproach.net/oauth/qq?redirect_to=https%3A%2F%2Fwebapproach.net" class="btn btn-sn-qq">
-                    <span class="tico tico-qq"></span>
-                </a>
-                                    </div>
-        </div>
-        <!-- End Open Login -->
-</form><!-- 页脚自定义代码 -->
-<script type='text/javascript'>
-/* <![CDATA[ */
-var TT = {"debug":"","uid":"0","language":"zh_CN","apiRoot":"https:\/\/webapproach.net\/api\/","_wpnonce":"35a529b5eb","home":"https:\/\/webapproach.net","themeRoot":"https:\/\/webapproach.net\/wp-content\/themes\/Tint","isHome":"1","commentsPerPage":"20","sessionApiTail":"session2","contributePostWordsMin":"100","o":"\u8fd9\u91cc\u586b\u8ba2\u5355\u53f7","e":"chinash2010@vip.qq.com","v":"2.1.0-Pro"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://oc1i5a75n.qnssl.com/wp-content/themes/Tint/assets/js/home-457f081ade.js'></script>
-<!--3 queries in 0.372 seconds.-->
+  </div>
+</div>
+{% block js %}
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.ias.js"></script>
+<script src="/static/js/scripts.js"></script>
+{% endblock %}
 </body>
 </html>

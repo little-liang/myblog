@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 import json, datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import JsonResponse
 # coding:utf-8
 # Create your views here.
 from backend.models import *
@@ -111,10 +112,13 @@ def edit_article(request):
             update_sql_obj.save()
 
             ##后台传给前台数据 只有这样 ajax 才认为自己成功了
-            ret = {'status': True, 'error': ""}
-            j_ret = json.dumps(ret)
-            return HttpResponse(j_ret)
+            # ret = {'status': True, 'error': ""}
+            # j_ret = json.dumps(ret)
+            # return HttpResponse(j_ret)
 
+            ##这样也行
+            name_dict = {'twz': 'Love python and Django', 'zqxt': 'I am teaching Django'}
+            return JsonResponse(name_dict)
 
         else:
             ###添加新文章/`

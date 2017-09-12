@@ -110,10 +110,10 @@ def edit_article(request):
 
             update_sql_obj.save()
 
-            ##后台传给前台数据
-            word = request.POST.get('success', 'true')
-            print(type(word))
-            return HttpResponse('fffff')
+            ##后台传给前台数据 只有这样 ajax 才认为自己成功了
+            ret = {'status': True, 'error': ""}
+            j_ret = json.dumps(ret)
+            return HttpResponse(j_ret)
 
 
         else:

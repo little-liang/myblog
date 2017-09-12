@@ -146,6 +146,8 @@
                 success:function(data){
                     console.log('成功');
                     console.log(data);
+                    alert('保存成功!');
+                    window.location.href="{% url 'article_admin' %}";
 
                 },
                 error:function(data){

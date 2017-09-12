@@ -35,50 +35,66 @@
 <!--编辑文章-->
 <div class="col-lg-9-for-admin">
 
-    <form>
-        {% csrf_token %}
-        <span>标题 : </span><input id="article_id" style="width: 70%;" type="text" name="title"/>
-        <br/>
-        <br/>
-        <span>分类 : </span>
-        <select id="catatory">
+    {% csrf_token %}
+    <form class="form-horizontal" action="edit_article.html">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">标题:</label>
+            <input class="form-control" id="article_id" style="width: 70%;"  name="title" type="text" placeholder="请输入标题">
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">分类:</label>
+
+        <select id="catatory" class="btn btn-default">
 
             {% if current_catagory_info %}
-                <option>{{ current_catagory_info }}</option>
+                <option class="btn btn-default">{{ current_catagory_info }}</option>
             {% endif %}
 
 
             {% for line in all_catagory_info_list %}
                 {% if line != current_catagory_info %}
-                    <option>{{ line }}</option>
+                    <option class="btn btn-default">{{ line }}</option>
                 {% endif %}
 
             {% endfor %}
-        </select>(请选择)
-        <br/>
-        <br/>
-
-        <span>摘要 : </span>
-        <textarea id="summary" style="width:700px;height:40px;"></textarea>
-
-        <textarea id="editor_id" name="content" style="width:800px;height:400px;visibility:hidden;"></textarea>
-        <br/>
-
-        <input type="radio" value="" checked="checked" />允许评论
-        <input type="radio" value="" />不许评论
+        </select>
 
 
-        <br/>
-        <br/>
-            <button name="submit" type="button">保存</button>
-            <button type="button">退出</button>
+        </div>
 
+        <div class="form-group">
+            <label class="col-sm-2 control-label">摘要:</label>
+            <textarea id="summary" class="form-control" rows="4" style="width: 70%"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">正文:</label>
+            <textarea id="editor_id" name="content" style="width:70%;height:400px;visibility:hidden;"></textarea>
+        </div>
+
+        <div style="margin-left: 5%">
+            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked>允许评论
+            &nbsp;
+            <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2">不允许评论
+        </div>
+
+
+        <div style="margin-left: 5%">
+            <br />
+            <button class="btn btn-info" name="submit" type="button">保存</button>
+            <button class="btn btn-danger" type="button">退出</button>
+        </div>
         </form>
     </div>
+
 
 </body>
 <script src="/static/js/custom.js"></script>
 <script src="/static/js/jquery-3.2.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
 <script src="/static/plugins/kindeditor/kindeditor-all.js"></script>
 <script>
     var editor;
@@ -114,31 +130,35 @@
             data['summary_post'] = $("#summary").val();
             data['title_post'] = $("[name='title']").val();
 
-            console.log(data);
-              $.ajax({
-                  type: "POST",
-                  dataType: "json",
-                  url: '{% url 'edit_article' %}',
-                  data: data,
-                  async : false,
-                  success:function(data){
-                        console.log('ok');
-                        window.location.href = '{% url 'article_admin' %}';
-                    },
-                  beforSend:function(){
-                        // 禁用按钮防止重复提交
-                        $("#submit").attr({ disabled: "disabled" });
-                    },
-                complete:function(msg){
-                    //请求完成后调用的回调函数（请求成功或失败时均调用）
-                } ,
-                error:function(msg){
-                    //请求失败时被调用的函数
-                } ,
-                Sucess:function(callback){
-                    alert('ok');
+
+
+            $.ajax({
+                url:'{% url 'edit_article' %}',
+                type:'POST', //GET
+                async:true,    //或false,是否异步
+                data:data,
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                beforeSend:function(data){
+                    console.log('发送前');
+                    console.log(data);
+                },
+                success:function(data){
+                    console.log('成功');
+                    console.log(data);
+
+                },
+                error:function(data){
+                    console.log('错误');
+                    console.log(data);
+
+                },
+                complete:function(data){
+                    console.log('结束');
+                    console.log(data);
                 }
-              });
+            })
+
 
 
         });

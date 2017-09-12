@@ -18,12 +18,14 @@ def article_admin(request):
 
             return HttpResponse("delete all OK")
     else:
-        every_page_num = 5  # 每页显示的记录数  #不加 order by 会有警告信息
+        every_page_num = 4  # 每页显示的记录数  #不加 order by 会有警告信息
         p = Paginator(Article.objects.all().order_by('-publish_time',), every_page_num)
 
         ##前端点击的page,第几页
         page = request.GET.get('page')
 
+
+        print(type(page))
         #当前页第一个文章的编号
         if page == None:
             page = 1
@@ -104,10 +106,16 @@ def edit_article(request):
 
             catagory_obj = Catagory.objects.get(name=request.POST.get('catagory_post'))
 
-            update_sql_obj.catagory=catagory_obj
+            update_sql_obj.catagory = catagory_obj
 
             update_sql_obj.save()
-            return render(request, 'backend/article_admin.html')
+
+            ##后台传给前台数据
+            word = request.POST.get('success', 'true')
+            print(type(word))
+            return HttpResponse('fffff')
+
+
         else:
             ###添加新文章/`
             content = request.POST.get('content_post')
@@ -150,3 +158,47 @@ def submit_article_id(request):
     print(request.POST)
     # article_id = request.POST
     # return render(request, 'edit_article.html', context={'article_list': article_id})
+
+
+@csrf_exempt
+def tags_admin(request):
+
+    if request.POST:
+        print(request.POST)
+        tag_id = request.POST.get('key_post')
+        tag_name = request.POST.get('value_post')
+
+        print(tag_id, tag_name)
+
+        update_obj = Tag.objects.get(id=int(tag_id))
+        update_obj.name = tag_name
+        update_obj.save()
+
+
+        return render(request, 'backend/tags_admin.html')
+    else:
+        tags_info = Tag.objects.all()
+        every_page_num = 4  # 每页显示的记录数  #不加 order by 会有警告信息
+        p = Paginator(Tag.objects.all().order_by('-id', ), every_page_num)
+
+
+        ##前端点击的page,第几页
+        page = request.GET.get('page')
+
+
+        # 当前页第一个文章的编号
+        if page == None:
+            page = 1
+        current_page_first = (int(page) - 1) * every_page_num
+
+        try:
+            page_obj = p.page(page)
+
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            page_obj = p.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            page_obj = p.page(p.num_pages)
+
+        return render(request, 'backend/tags_admin.html', context={'tags_info': tags_info, 'page_obj': page_obj, 'current_page_first': current_page_first})

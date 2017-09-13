@@ -10,7 +10,7 @@
     <div class="panel panel-default">
         <div class="panel-heading text-for-admin-2" style="height: 55px;">
             <span class="pull-right">
-                <a class="btn btn-success" href="{% url 'edit_article' %}">添加标签</a>
+                <a class="btn btn-success" href="{% url 'edit_article' %}">添加分类</a>
                 <a class="btn btn-info" name="delete-all">批量删除</a>
             </span>
         </div>
@@ -20,15 +20,18 @@
             <tr>
                 <th><input name="checked-all" type="checkbox"></th>
                 <th>#</th>
-                <th>名称</th>
+                <th>内容</th>
+                <th>作者</th>
+                <th>发布时间</th>
+
                 <th>操作</th>
             </tr>
             </thead>
 
             <tbody>
 
-            {% for tag in page_obj %}
-                <tr name="RowId" row-id="{{ tag.id }}">
+            {% for line in page_obj %}
+                <tr name="RowId" row-id="{{ line.id }}">
                     <td scope="row">
                     <label>
                         <input name="checked-one" type="checkbox">
@@ -40,13 +43,20 @@
                     </td>
 
                     <td>
-                        <input class="form-control" id="input{{ tag.id }}" type="text" value="{{ tag.name }}" disabled>
+                        <input class="form-control" id="input{{ line.id }}" type="text" value="{{ line.content }}" disabled>
+                    </td>
+
+                    <td>
+                        {{ line.author }}
+                    </td>
+                    <td>
+                        {{ line.publish_time }}
                     </td>
 
                     <td style="width: 190px;">
                         <a class="btn btn-info" id="Ok">Ok</a>
                         <a class="btn btn-success" id="Edit">Edit</a>
-                        <a href="{% url "tags_admin" %}?tag-id={{ tag.id }}&command=delete" class="btn btn-danger">Delete</a>
+                        <a href="{% url "tags_admin" %}?tag-id={{ catagory.id }}&command=delete" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             {% endfor %}
@@ -129,7 +139,7 @@
                 data['value_post'] = $(rowId).val();
 
                 $.ajax({
-                url:'{% url 'tags_admin' %}',
+                url:'{% url 'catagory_admin' %}',
                 type:'POST', //GET
                 async:true,    //或false,是否异步
                 data:data,
@@ -141,8 +151,10 @@
                 },
                 success:function(data,textStatus,jqXHR){
                     console.log(data)
+                    console.log('成功')
                     console.log(textStatus)
                     console.log(jqXHR)
+                    window.location.reload();
                 },
                 error:function(xhr,textStatus){
                     console.log('错误')

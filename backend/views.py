@@ -206,3 +206,85 @@ def tags_admin(request):
             page_obj = p.page(p.num_pages)
 
         return render(request, 'backend/tags_admin.html', context={'tags_info': tags_info, 'page_obj': page_obj, 'current_page_first': current_page_first})
+
+
+@csrf_exempt
+def catagory_admin(request):
+    if request.POST:
+        print(request.POST)
+        catagory_id = request.POST.get('key_post')
+        catagory_name = request.POST.get('value_post')
+
+        update_obj = Catagory.objects.get(id=int(catagory_id))
+        update_obj.name = catagory_name
+        update_obj.save()
+
+        ajax_success_info = {'status': True}
+
+        return JsonResponse(ajax_success_info)
+    else:
+        catagory_info = Catagory.objects.all()
+        every_page_num = 4  # 每页显示的记录数  #不加 order by 会有警告信息
+        p = Paginator(Catagory.objects.all().order_by('-id', ), every_page_num)
+
+        ##前端点击的page,第几页
+        page = request.GET.get('page')
+
+        # 当前页第一个文章的编号
+        if page == None:
+            page = 1
+        current_page_first = (int(page) - 1) * every_page_num
+
+        try:
+            page_obj = p.page(page)
+
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            page_obj = p.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            page_obj = p.page(p.num_pages)
+        return render(request, 'backend/catagory_admin.html', context={
+            'page_obj': page_obj, 'current_page_first': current_page_first,
+            'catagory_info': catagory_info,
+        })
+
+
+def comment_admin(request):
+    if request.POST:
+        print(request.POST)
+        catagory_id = request.POST.get('key_post')
+        catagory_name = request.POST.get('value_post')
+
+        update_obj = Catagory.objects.get(id=int(catagory_id))
+        update_obj.name = catagory_name
+        update_obj.save()
+
+        ajax_success_info = {'status': True}
+
+        return JsonResponse(ajax_success_info)
+    else:
+
+        every_page_num = 4  # 每页显示的记录数  #不加 order by 会有警告信息
+        p = Paginator(Comment.objects.all().order_by('-publish_time', ), every_page_num)
+
+        ##前端点击的page,第几页
+        page = request.GET.get('page')
+
+        # 当前页第一个文章的编号
+        if page == None:
+            page = 1
+        current_page_first = (int(page) - 1) * every_page_num
+
+        try:
+            page_obj = p.page(page)
+
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            page_obj = p.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            page_obj = p.page(p.num_pages)
+        return render(request, 'backend/comment_admin.html', context={
+            'page_obj': page_obj, 'current_page_first': current_page_first,
+        })

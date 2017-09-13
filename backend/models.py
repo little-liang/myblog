@@ -38,7 +38,6 @@ class Comment(models.Model):
     author = models.CharField(max_length=8)
     publish_time = models.DateField(auto_now_add=True)
     content = models.TextField()
-    oo = models.CharField(max_length=64)
     def __str__(self):
         return self.author
 

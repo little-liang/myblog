@@ -1,40 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/custom.css" rel="stylesheet">
-    <link href="/static/plugins/kindeditor/themes/default/default.css" rel="stylesheet">
+{% extends 'backend/base.html' %}
+{% block right-content %}
+<div style="margin-top: 60px; float: left;margin-left: -15px;">
 
-</head>
-
-<body>
-
-{#<!--大标题-->#}
-<div class="page-header-for-admin">
-    <h1 class="text-center">Hello Blog</h1>
-</div>
-
-<!--左侧栏-->
-<div class="col-lg-2">
-    <div class="list-group text-for-admin">
-        <ul class="left-content-for-admin" id="drop1">
-            <li>
-                <a href="#" class="list-group-item active" id="dropdown1">文章管理<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-                <ul class="left-content-for-admin" >
-                    <li><a href="#" class="list-group-item">文章管理</a></li>
-                    <li><a href="#" class="list-group-item">文章管理</a></li>
-                    <li><a href="#" class="list-group-item">文章管理</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<!--编辑文章-->
-<div class="col-lg-9-for-admin">
-
+    <div class="container-fluid" >
+    <!--右侧栏-->
+    <div class="col-lg-10" style="position: absolute; ">
     {% csrf_token %}
     <form class="form-horizontal" action="edit_article.html">
 
@@ -87,14 +57,14 @@
             <button class="btn btn-danger" type="button">退出</button>
         </div>
         </form>
+
     </div>
+</div>
 
+</div>
+{% endblock %}
 
-</body>
-<script src="/static/js/custom.js"></script>
-<script src="/static/js/jquery-3.2.1.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-
+{% block js %}
 <script src="/static/plugins/kindeditor/kindeditor-all.js"></script>
 <script>
     var editor;
@@ -171,4 +141,6 @@
 
 </script>
 
-</html>
+{% endblock %}
+
+

@@ -75,7 +75,7 @@
       <column name="catagory_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="canbe_content" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="viwes_num" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="summary" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="summary" sqlType="VARCHAR(256)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_backend_article_1" columns="catagory_id" ref-table="backend_catagory" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="backend_article_catagory_id_3f488969" unique="true" columns="catagory_id"/>
@@ -102,7 +102,6 @@
       <column name="publish_time" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="content" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="article_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="oo" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_backend_comment_1" columns="article_id" ref-table="backend_article" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="backend_comment_article_id_61c1548c" unique="true" columns="article_id"/>

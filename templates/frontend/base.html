@@ -108,11 +108,11 @@
 
       {% for article in article_info %}
         <article class="excerpt excerpt-1">
-            <a class="focus" href="frontend/article.html" title="">
+            <a class="focus" href="frontend/article/{{ article.id }}.html" title="">
                 <img class="thumb" data-original="/static/images/excerpt.jpg" src="/static/images/excerpt.jpg" alt="">
             </a>
           <header><a class="cat" href="program">{{ article.catagory }}<i></i></a>
-            <h2><a href="frontend/article.html" title="">{{ article.title }}</a></h2>
+            <h2><a href="frontend/article/{{ article.id }}.html" title="">{{ article.title }}</a></h2>
           </header>
           <p class="meta">
             <time class="time"><i class="glyphicon glyphicon-time"></i> {{ article.publish_time }}</time>
